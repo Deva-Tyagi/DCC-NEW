@@ -1,0 +1,201 @@
+.contact-wrapper {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #0a192f;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .contact-container {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  /* Decorative Elements */
+  .leaf-decoration {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40,70 Q70,10 140,70 Q70,130 40,70' stroke='%23172a45' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+    opacity: 0.2;
+  }
+  
+  .leaf-decoration.left {
+    top: 0;
+    left: -80px;
+  }
+  
+  .leaf-decoration.right {
+    bottom: 0;
+    right: -80px;
+    transform: rotate(180deg);
+  }
+  
+  /* Form Header */
+  .contact-form-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .contact-subheading {
+    color: #64ffda;
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-heading {
+    font-size: 2.5rem;
+    color: #ccd6f6;
+    font-family: serif;
+  }
+  
+  /* Form Layout */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .contact-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  
+  .contact-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .contact-form-group.full-width {
+    grid-column: 1 / -1;
+  }
+  
+  /* Labels */
+  .contact-form-group label {
+    font-size: 0.875rem;
+    color: #8892b0;
+  }
+  
+  /* Input Containers */
+  .contact-input-container {
+    position: relative;
+  }
+  
+  /* Inputs and Textarea */
+  .contact-form-group input, .contact-form-group textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #172a45;
+    padding: 0.5rem 0;
+    color: #ccd6f6;
+    transition: border-color 0.3s ease;
+  }
+  
+  .contact-form-group input::placeholder, .contact-form-group textarea::placeholder {
+    color: #4a5d7e;
+  }
+  
+  .contact-form-group input:focus, .contact-form-group textarea:focus {
+    outline: none;
+    border-bottom-color: #64ffda;
+  }
+  
+  .contact-form-group textarea {
+    resize: none;
+    min-height: 100px;
+  }
+  
+  /* Input Icons */
+  .contact-input-icon {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  /* Privacy Notice */
+  .contact-privacy-notice {
+    font-size: 0.875rem;
+    color: #8892b0;
+    margin: 1rem 0;
+  }
+  
+  /* Submit Button */
+  .contact-submit-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 32px;
+    background: transparent;
+    border: 1px solid #64ffda;
+    color: #64ffda;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    margin-top: 20px;
+  }
+  
+  .contact-submit-button span {
+    display: inline-block;
+  }
+  
+  .contact-submit-button .contact-button-icon {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+  }
+  
+  .contact-submit-button:hover {
+    background-color: #64ffda;
+    color: #0a192f;
+  }
+  
+  .contact-submit-button:hover .contact-button-icon {
+    transform: translateX(5px);
+  }
+  
+  /* Icon bounce animation on input focus */
+  .contact-input-container:focus-within .contact-input-icon {
+    animation: iconBounce 0.5s ease;
+  }
+  
+  @keyframes iconBounce {
+    0%, 100% { transform: translateY(-50%) scale(1); }
+    50% { transform: translateY(-50%) scale(1.2); }
+  }
+  
+  /* Make sure the button is properly positioned */
+  .contact-form {
+    position: relative;
+  }
+  
+  .contact-submit-button {
+    position: absolute;
+    right: 0;
+    bottom: -60px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .contact-container {
+      width: 90%;
+    }
+    
+    .contact-form-row {
+      grid-template-columns: 1fr;
+    }
+    
+    .leaf-decoration {
+      display: none;
+    }
+  }

@@ -1,0 +1,197 @@
+.technologies-main{
+    margin: 120px 20px 20px 20px;
+    font-family: "Exo 2", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: italic;
+    box-shadow: 0 20px 10px rgba(23, 20, 20, 0.4);
+  }
+  .technologies-main h1{
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  .technologies-page {
+      background-color: black;
+      padding: 0 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .tech-container {
+      display: flex;
+      height: 80vh;
+      font-family: Arial, sans-serif;
+      gap: 20px;
+      padding: 0px 50px 0px 50px;
+    }
+    
+    .sidebar {
+      width: 35%;
+      background-color: black;
+      color: white;
+      overflow-y: auto;
+      border-radius: 20px;
+      padding: 10px;
+    }
+    
+    .topic-heading {
+      margin: 20px;
+      padding: 15px;
+      cursor: pointer;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+    }
+    
+    .topic-heading:hover {
+      background-color: rgba(199, 199, 241, 0.356);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .topic-heading.active {
+      background-color: rgb(32, 32, 95);
+      font-weight: bold;
+    }
+    
+    .topic-heading .arrow-icon {
+      margin-left: 20px;
+      font-size: 30px;
+    }
+    
+    .content-area {
+      flex: 1;
+      padding: 20px;
+      background-color: black;
+      border-radius: 20px;
+      
+    }
+    
+    .content-title {
+      color: white;
+      border-bottom: 2px solid #1e90ff;
+      padding-bottom: 10px;
+      font-family: Arial, sans-serif;
+      margin-bottom: 20px;
+    }
+    
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 15px;
+      max-width: 100%; /* Ensure the grid container does not exceed the parent container */
+      overflow: hidden; /* Hide any overflow content */
+    }
+    
+    .tech-card {
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+      border: 1px solid blue;
+      border-radius: 15px;
+      background-color: black;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    
+    
+    
+    .tech-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .tech-card img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 10px;
+      object-fit: contain;
+    }
+    
+    .tech-card p {
+      margin: 0;
+      font-size: 14px;
+      color: white;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+    }
+    
+   
+    @media screen and (max-width: 1024px) {
+      .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      }
+    }
+    
+    @media screen and (max-width: 768px) {
+      .tech-container {
+        flex-direction: column;
+        height: auto;
+      }
+    
+      .sidebar {
+        width: 100%;
+        max-height: 300px;
+      }
+    
+      .content-area {
+        width: 100%;
+      }
+      .content-title{
+          font-size: 20px;
+      }
+    
+      .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      }
+    }
+    
+    @media screen and (max-width: 480px) {
+      .technologies-page {
+        margin-top: 60px;
+        padding: 0 10px;
+      }
+    
+      .topic-heading {
+        margin: 10px;
+        padding: 12px;
+        font-size: 14px;
+      }
+    
+      .topic-heading .arrow-icon {
+        font-size: 20px;
+      }
+    
+      .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 10px;
+      }
+    
+      .tech-card {
+        padding: 8px;
+      }
+    
+      .tech-card img {
+        width: 40px;
+        height: 40px;
+      }
+    
+      .tech-card p {
+        font-size: 12px;
+      }
+    }
+    
+    /* Custom scrollbar for sidebar */
+    .sidebar::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    .sidebar::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .sidebar::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 3px;
+    }

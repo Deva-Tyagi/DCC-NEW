@@ -1,0 +1,293 @@
+  .focus-landing-container {
+    display: flex;
+    justify-content: space-between;
+    background: #0a192f;
+    color: #e6f1ff; 
+    align-items: center;
+    gap: 150px;
+    padding: 80px 0;
+    width: 100%;
+    margin: auto;
+  }
+  
+  /* Left Section */
+  .focus-left-section {
+    width: 45%;
+    margin-left: 60px;
+  }
+  
+  .focus-badge {
+    display: inline-block;
+    background: #1e3a8a;  /* Darker blue for badge */
+    color: #e6f1ff;
+    padding: 5px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 15px;
+  }
+  
+  .focus-left-section h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #64ffda;  /* Bright blue-green for headings */
+  }
+  
+  .focus-left-section p {
+    font-size: 16px;
+    color: #8892b0;  /* Muted blue-gray for paragraphs */
+    line-height: 1.6;
+  }
+  
+  /* CTA Button */
+  .focus-cta-button {
+    position: relative;
+    background: transparent;
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 15px 30px;
+    margin-top: 25px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 50px;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent;
+  }
+  
+  .focus-button-text {
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+    color: #e6f1ff;  /* Light text color */
+  }
+  
+  /* Small Blue Circle Initially */
+  .focus-button-circle {
+    position: absolute;
+    width: 50px;
+    height: 45px;
+    background: #64ffda;  /* Bright blue-green for circle */
+    border-radius: 50%;
+    left: 10px;
+    transition: all 0.4s ease;
+  }
+  
+  /* Hover Effect */
+  .focus-cta-button:hover {
+    border: 2px solid #64ffda;
+    background: #64ffda;
+  }
+  
+  .focus-cta-button:hover .focus-button-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+  }
+  
+  .focus-cta-button:hover .focus-button-text {
+    color: #0a192f;  /* Dark blue text on hover */
+  }
+  
+  /* Right Section */
+  .focus-right-section {
+    width: 50%;
+    margin-right: 60px;
+  }
+  
+  .focus-quotes-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .focus-quote-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 60px;
+    max-width: 350px;
+  }
+  
+  .focus-quote-item.right {
+    margin-left: auto;
+    text-align: left;
+  }
+  
+  .focus-quote-number {
+    position: absolute;
+    left: -50px;
+    top: -10px;
+    font-size: 80px;
+    font-weight: bold;
+    color: rgba(100, 255, 218, 0.1);  /* Faded blue-green for numbers */
+  }
+  
+ .focus-right-section h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #64ffda;  /* Bright blue-green for subheadings */
+  }
+  
+  .focus-underline {
+    width: 40px;
+    height: 3px;
+    background: #64ffda;  /* Bright blue-green for underline */
+    margin-top: 5px;
+  }
+  
+
+/* Tablet and Smaller Desktop */
+@media screen and (max-width: 1200px) {
+  .focus-landing-container {
+      gap: 80px;
+      padding: 60px 0;
+  }
+
+  .focus-left-section {
+      width: 50%;
+      margin-left: 40px;
+  }
+
+  .focus-right-section {
+      width: 45%;
+      margin-right: 40px;
+  }
+
+  .focus-left-section h1 {
+      font-size: 35px;
+  }
+}
+
+/* Tablet Portrait */
+@media screen and (max-width: 900px) {
+  .focus-landing-container {
+      flex-direction: column;
+      gap: 60px;
+      padding: 50px 20px;
+  }
+
+  .focus-left-section,
+  .focus-right-section {
+      width: 90%;
+      margin: 0 auto;
+      text-align: center;
+  }
+
+  .focus-badge {
+      margin: 0 auto;
+  }
+
+  .focus-cta-button {
+      margin: 25px auto 0;
+  }
+
+  .focus-quotes-container {
+      max-width: 500px;
+      margin: 0 auto;
+  }
+
+  .focus-quote-item {
+      max-width: 100%;
+      padding-left: 0;
+      text-align: center;
+      margin: 0 auto 40px;
+  }
+
+  .focus-quote-item.right {
+      margin: 0 auto 40px;
+      text-align: center;
+  }
+
+  .focus-quote-number {
+      position: static;
+      left: auto;
+      top: auto;
+      font-size: 60px;
+      margin-bottom: 10px;
+  }
+
+  .focus-underline {
+      margin: 5px auto 0;
+  }
+}
+
+/* Mobile Large */
+@media screen and (max-width: 640px) {
+  .focus-landing-container {
+      padding: 40px 15px;
+  }
+
+  .focus-left-section,
+  .focus-right-section {
+      width: 100%;
+  }
+
+  .focus-left-section h1 {
+      font-size: 30px;
+  }
+
+  .focus-left-section p {
+      font-size: 15px;
+  }
+
+  .focus-quote-number {
+      font-size: 50px;
+  }
+}
+
+/* Mobile Small */
+@media screen and (max-width: 480px) {
+  .focus-landing-container {
+      padding: 30px 10px;
+      gap: 40px;
+  }
+
+  .focus-left-section h1 {
+      font-size: 26px;
+      margin: 15px 0;
+  }
+
+  .focus-badge {
+      font-size: 12px;
+      padding: 4px 12px;
+  }
+
+  .focus-quote-item {
+      margin-bottom: 30px;
+  }
+
+  .focus-quote-number {
+      font-size: 40px;
+  }
+
+  .focus-right-section h3 {
+      font-size: 16px;
+  }
+
+  .focus-cta-button {
+      padding: 12px 25px;
+  }
+
+  .focus-button-text {
+      font-size: 14px;
+  }
+}
+
+/* Very Small Devices */
+@media screen and (max-width: 360px) {
+  .focus-left-section h1 {
+      font-size: 22px;
+  }
+
+  .focus-quote-number {
+      font-size: 35px;
+  }
+
+  .focus-right-section h3 {
+      font-size: 15px;
+  }
+}

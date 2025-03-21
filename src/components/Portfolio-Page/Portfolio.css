@@ -1,0 +1,47 @@
+/* 
+
+.customButton {
+    position: relative;
+    padding: 12px 32px;
+    color: #fff;
+    background: transparent;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+  }
+  
+  .customButton::before,
+  .customButton::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  .customButton::before {
+    top: -1px;
+    left: -1px;
+    border-top: 2px solid #3B82F6;
+    border-left: 2px solid #3B82F6;
+  }
+  
+  .customButton::after {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 2px solid #3B82F6;
+    border-right: 2px solid #3B82F6;
+  }
+  
+  .customButton:hover {
+    border-color: #3B82F6;
+  }
+  
+  .customButton:hover::before,
+  .customButton:hover::after {
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    border-color: #3B82F6;
+  } */

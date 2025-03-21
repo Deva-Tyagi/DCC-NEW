@@ -1,0 +1,173 @@
+.team-section {
+    background-image: url('https://preview.colorlib.com/theme/videograph/img/team-bg.jpg.webp');
+    width: 100%;
+    color: white;
+    text-align: start;
+    padding: 60px 0px;
+    position: relative;
+    height: 100%;
+  }
+  
+  .section-title {
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin:0px 0px 40px 60px;
+  }
+  
+  .section-title span {
+    font-size: 32px;
+    font-weight: 700;
+    color: #00aaff;
+    display: block;
+    margin-top: 10px;
+  }
+  
+  /* Team Grid */
+  .team-grid {
+    display: flex;
+    justify-content: center;
+    gap: 0px;
+    flex-wrap: wrap;
+  }
+  
+  .team-member {
+    position: relative;
+    transition: transform 0.3s ease;
+    width: 300px; 
+    height: 400px; 
+  }
+  
+  .team-member img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Hover Effect */
+  .team-member:hover img {
+    filter: brightness(0.3);
+  }
+  
+  /* Member Info Popup */
+  .member-info {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 15px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    width: 80%;
+  }
+  
+  .member-info h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .member-info p {
+    font-size: 14px;
+    opacity: 0.8;
+  }
+  
+  .member-1 {
+    transform: translateY(50px);
+  }
+  
+  .member-2 {
+    transform: translateY(0);
+  }
+  
+  .member-3 {
+    transform: translateY(-50px);
+  }
+  
+  .member-4 {
+    transform: translateY(-100px);
+  }
+  
+  /* Meet Our Team Button */
+  .meet-button {
+    position: relative;
+    margin-top: 20px;
+    margin-right: 20px;
+    text-align: end;
+  }
+  
+  .btn {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: 2px solid #00aaff;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #00aaff;
+    transition: left 0.3s ease-in-out;
+  }
+  
+  .btn:hover::before {
+    left: 0;
+  }
+  
+  .btn:hover {
+    color: black;
+    background: #00aaff;
+  }
+  
+  /* Responsive Media Queries */
+  @media (max-width: 768px) {
+    .team-grid {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+  
+    .team-member {
+      width: 100%; /* Full-width cards for very small screens */
+      height: auto; /* Maintain aspect ratio */
+    }
+    .member-3 img{
+      width: 100%;
+      height: 300px;
+      background-position:top;
+    }
+  
+    .meet-button {
+        position: relative;
+        bottom: 0;
+        right: 0;
+        margin-top: 20px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .team-member {
+        width: 100%; /* Full-width cards for very small screens */
+        height: auto; /* Maintain aspect ratio */
+    }
+  
+    .member-info h3 {
+        font-size: 16px;
+    }
+  
+    .member-info p {
+        font-size: 12px;
+    }
+  }
+  

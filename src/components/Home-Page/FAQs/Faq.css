@@ -1,0 +1,267 @@
+.faq-container {
+  background-color: #000000;
+  color: #fff;
+  margin-top: 50px;
+  font-family: "Exo 2", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: italic;
+  width: 100%;
+}
+
+.faq-page {
+  display: flex;
+  flex-direction: row;
+  background-color: #000000;
+  color: #fff;
+  min-height: 70vh;
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.faq-sidebar {
+  width: 25%;
+  min-width: 200px;
+  background-color: #000000;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.tab {
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: #000000;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: left;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  color: #fff;
+  transition: background-color 0.3s;
+  border: 1px solid #333;
+}
+
+.tab.active {
+  background-color: #ff4500;
+  border-color: #ff4500;
+}
+
+.tab.active:hover {
+  background-color: #e84205;
+}
+
+.tab:hover {
+  background-color: #f8c8b776;
+  color: #000000;
+}
+
+.faq-content {
+  flex-grow: 1;
+  margin-left: 20px;
+  padding: 20px;
+  background-color: #000000;
+  border-radius: 8px;
+}
+
+.faq-content h2 {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  margin-bottom: 20px;
+}
+
+.faq-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+}
+
+.faq-question {
+  padding: 15px;
+  background-color: #000000;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: 1px solid #333;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+.faq-question:hover {
+  background-color: #353535;
+}
+
+.faq-answer {
+  padding: 15px;
+  background-color: #000000;
+  border-radius: 5px;
+  margin-left: 20px;
+  margin-top: 10px;
+  color: #fff;
+  border: 1px solid #333;
+  font-size: clamp(0.8rem, 1.8vw, 0.95rem);
+}
+
+.dropdown-icon {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* Responsive Design - Tablets */
+@media (max-width: 992px) {
+  .faq-page {
+    padding: 1.5rem;
+  }
+  
+  .faq-sidebar {
+    width: 30%;
+  }
+}
+
+/* Responsive Design - Small tablets */
+@media (max-width: 768px) {
+  .faq-page {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+    overflow-y: visible;
+  }
+  
+  .faq-sidebar {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .tab {
+    flex: 1 1 calc(50% - 10px);
+    margin-bottom: 0;
+    min-width: 120px;
+  }
+  
+  .faq-content {
+    margin-left: 0;
+    width: 100%;
+    overflow-y: visible;
+  }
+  
+  .faq-answer {
+    margin-left: 10px;
+  }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 480px) {
+  .faq-page {
+    padding: 0.75rem;
+    overflow-y: visible;
+  }
+  
+  .tab {
+    flex: 1 1 100%;
+    padding: 12px;
+  }
+  
+  .faq-content {
+    padding: 15px;
+    overflow-y: visible;
+  }
+  
+  .faq-question {
+    padding: 12px;
+  }
+  
+  .faq-answer {
+    padding: 12px;
+    margin-left: 5px;
+  }
+}
+
+/* For extra small screens */
+@media (max-width: 350px) {
+  .faq-page {
+    padding: 0.5rem;
+  }
+  
+  .faq-sidebar,
+  .faq-content {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .faq-container {
+    padding: 0 20px;  /* Added horizontal padding */
+  }
+
+  .faq-page {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+    overflow-y: visible;
+    max-width: 600px;  /* Added max-width for centering */
+    margin: 0 auto;    /* Center the content */
+  }
+  
+  .faq-sidebar {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .tab {
+    flex: 1 1 calc(50% - 10px);
+    margin-bottom: 0;
+    min-width: 120px;
+  }
+  
+  .faq-content {
+    margin-left: 0;
+    width: 100%;
+    overflow-y: visible;
+  }
+  
+  .faq-answer {
+    margin-left: 10px;
+  }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 480px) {
+  .faq-container {
+    padding: 0 15px;  /* Adjusted padding for smaller screens */
+  }
+
+  .faq-page {
+    padding: 0.75rem;
+    overflow-y: visible;
+    max-width: 100%;  /* Allow full width on very small screens */
+  }
+  
+  .tab {
+    flex: 1 1 100%;
+    padding: 12px;
+  }
+  
+  .faq-content {
+    padding: 15px;
+    overflow-y: visible;
+  }
+  
+  .faq-question {
+    padding: 12px;
+  }
+  
+  .faq-answer {
+    padding: 12px;
+    margin-left: 5px;
+  }
+}

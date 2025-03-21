@@ -1,0 +1,127 @@
+.our-process {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #101214;
+    font-family: "Exo 2", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: italic;
+    padding: 3rem 1rem;
+  }
+  
+  .service-area {
+    padding-bottom: 30px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .service-area h2, .service-area p {
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  
+  .approach-description {
+    color: rgb(244, 253, 211);
+    width: 50%;
+    margin: auto;
+    font-size: 17px;
+  }
+  
+  .process-img {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .process-img img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Large screens */
+  @media (min-width: 1200px) {
+    .our-process {
+      padding: 4rem 2rem;
+    }
+  }
+  
+  /* Medium screens */
+  @media (max-width: 992px) {
+    .approach-description {
+      width: 70%;
+    }
+    
+    .process-img img {
+      width: 90%;
+    }
+  }
+  
+  /* Tablets */
+  @media (max-width: 768px) {
+    .our-process {
+      padding: 2rem 1rem;
+    }
+    
+    .service-area {
+      padding: 1.5rem 1rem;
+    }
+    
+    .service-area h2 {
+      font-size: 24px;
+    }
+    
+    .approach-description {
+      width: 85%;
+      font-size: 16px;
+    }
+    
+    .process-img img {
+      width: 95%;
+    }
+  }
+  
+  /* Mobile phones */
+  @media (max-width: 480px) {
+    .our-process {
+      padding: 1.5rem 0.5rem;
+    }
+    
+    .service-area {
+      padding: 1rem 0.5rem;
+    }
+    
+    .service-area h2 {
+      font-size: 20px;
+    }
+    
+    .approach-description {
+      width: 95%;
+      font-size: 14px;
+    }
+  }
+  
+  /* Small mobile phones */
+  @media (max-width: 320px) {
+    .our-process {
+      padding: 1rem 0.25rem;
+    }
+    
+    .service-area {
+      padding: 0.5rem;
+    }
+    
+    .service-area h2 {
+      font-size: 18px;
+    }
+    
+    .approach-description {
+      width: 100%;
+      font-size: 12px;
+    }
+  }

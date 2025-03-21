@@ -1,0 +1,197 @@
+  .about-banner {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .about-banner-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #1a1a2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .about-banner-loader-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #ffffff;
+    border-top: 4px solid transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+
+  .about-banner-main-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #1a1a2e;
+  }
+  
+  .about-banner-background-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://craftohtml.themezaa.com/images/demo-corporate-main-slider-02.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+ 
+  .circles-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(84, 84, 202, 0.3);
+  }
+  
+  .circle-1 {
+    width: 520px;
+    height: 520px;
+    z-index: 1;
+  }
+  
+  .circle-2 {
+    width: 710px;
+    height: 710px;
+    z-index: 0;
+  }
+  
+ 
+  .about-banner-content {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+    text-align: center;
+    max-width: 800px;
+    padding: 0 2rem;
+  }
+  
+  .about-banner-support-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+  }
+  
+  .about-banner-support-tag .icon {
+    font-size: 1.2rem;
+  }
+  
+  .about-banner-content h1 {
+    font-size: 4rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+  }
+  
+  .about-banner-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+  }
+  
+  .about-banner-cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(45deg, #ff6b6b, #6b47ff);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .about-banner-cta-button:hover {
+    transform: translateY(-2px);
+  }
+  
+  
+  @media (max-width: 1024px) {
+    .circle-1 {
+      width: 500px;
+      height: 500px;
+    }
+  
+    .circle-2 {
+      width: 700px;
+      height: 700px;
+    }
+  
+   .about-banner-content h1 {
+      font-size: 3.5rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .circle-1 {
+      width: 400px;
+      height: 400px;
+    }
+  
+    .circle-2 {
+      width: 600px;
+      height: 600px;
+    }
+  
+    .about-banner-content h1 {
+      font-size: 2.8rem;
+    }
+  
+    .about-banner-content p {
+      font-size: 1.1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .circle-1 {
+      width: 300px;
+      height: 300px;
+    }
+  
+    .circle-2 {
+      width: 400px;
+      height: 400px;
+    }
+  
+    .about-banner-content h1 {
+      font-size: 2.2rem;
+    }
+  
+    .about-banner-support-tag {
+      font-size: 0.8rem;
+    }
+  
+    .about-banner-content p {
+      font-size: 1rem;
+    }
+  }
