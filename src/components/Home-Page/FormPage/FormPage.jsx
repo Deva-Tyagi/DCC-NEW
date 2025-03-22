@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import emailjs from 'emailjs-com';
 import "./FormPage.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -18,6 +19,8 @@ const FormPage = () => {
   });
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
+  const [num1, setNum1] = useState(Math.floor(Math.random() * 10));
+  const [num2, setNum2] = useState(Math.floor(Math.random() * 10));
 
   useEffect(() => {
     const formElements = formRef.current.querySelectorAll(".form-page > div");
@@ -48,44 +51,52 @@ const FormPage = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setLoading(true);
-    
-    try {
-      const response = await fetch('http://localhost:4000/api/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
-      });
-      
-      const data = await response.json();
-      console.log(data);
-      
-      if (response.ok) {
-        setMessage('Email sent successfully!');
-        // Reset form
-        e.target.reset();
-        setFormData({
-          fullName: '',
-          email: '',
-          contactNumber: '',
-          budget: '',
-          description: '',
-          nda: false,
-          captcha: ''
-        });
-      } else {
-        setMessage('Failed to send email. Please try again.');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      setMessage('An error occurred. Please try again later.');
-    } finally {
-      setLoading(false);
+
+    if (parseInt(formData.captcha) !== num1 + num2) {
+      setMessage('Incorrect CAPTCHA. Please try again.');
+      setNum1(Math.floor(Math.random() * 10));
+      setNum2(Math.floor(Math.random() * 10));
+      return;
     }
+
+    setLoading(true);
+
+    emailjs.send(
+      'service_cbzqjjg',
+      'template_d72f7ua',
+      {
+        fullName: formData.fullName,
+        email: formData.email,
+        contactNumber: formData.contactNumber,
+        budget: formData.budget,
+        description: formData.description,
+        nda: formData.nda ? 'Yes' : 'No',
+        captcha: formData.captcha
+      },
+      'TTXQvIwpY_a9NYT-7'
+    )
+    .then((response) => {
+      setMessage('Email sent successfully!');
+      setTimeout(() => setMessage(''), 4000);
+      e.target.reset();
+      setFormData({
+        fullName: '',
+        email: '',
+        contactNumber: '',
+        budget: '',
+        description: '',
+        nda: false,
+        captcha: ''
+      });
+      setNum1(Math.floor(Math.random() * 10));
+      setNum2(Math.floor(Math.random() * 10));
+    })
+    .catch((error) => {
+      setMessage('Failed to send email. Please try again.');
+    })
+    .finally(() => setLoading(false));
   };
 
   return (
@@ -173,7 +184,7 @@ const FormPage = () => {
             </div>
 
             <div className="captcha">
-              <span>5 + 6 =</span>
+              <span>{num1} + {num2} =</span>
               <input 
                 type="text" 
                 id="captcha"

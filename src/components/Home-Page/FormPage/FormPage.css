@@ -132,6 +132,9 @@ body {
       font-size: 1rem;
     }
   }
+  .right-section{
+    max-width: 80vh;
+  }
   .message {
     padding: 10px;
     margin-bottom: 15px;

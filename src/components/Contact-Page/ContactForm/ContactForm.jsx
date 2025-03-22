@@ -1,24 +1,27 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import emailjs from 'emailjs-com';
 import './ContactForm.css';
 
-// Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
 const ContactForm = () => {
   const formRef = useRef(null);
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    contactNumber: '',
+    subject: '',
+    description: ''
+  });
+  const [message, setMessage] = useState('');
 
   useEffect(() => {
     const elements = formRef.current.querySelectorAll('.gsap-animate');
-    
-    // Set initial state
-    gsap.set(elements, { 
-      y: -50,
-      opacity: 0 
-    });
 
-    // Create animation for each element
+    gsap.set(elements, { y: -50, opacity: 0 });
+
     elements.forEach((element, index) => {
       gsap.to(element, {
         y: 0,
@@ -35,67 +38,70 @@ const ContactForm = () => {
     });
   }, []);
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs.send(
+      'service_cbzqjjg', // Service ID
+      'template_d72f7ua', // Template ID
+      formData,
+      'TTXQvIwpY_a9NYT-7' // Public Key (User ID)
+    ).then((response) => {
+      setMessage('Message sent successfully!');
+      setTimeout(() => setMessage(''), 4000); // Auto-hide message after 4 seconds
+      setFormData({ fullName: '', email: '', contactNumber: '', subject: '', description: '' });
+    }).catch((error) => {
+      setMessage('Failed to send message. Please try again.');
+    });
+  };
+
   return (
     <div className="contact-wrapper">
       <div className="contact-container" ref={formRef}>
-        {/* Decorative Elements */}
         <div className="leaf-decoration left"></div>
         <div className="leaf-decoration right"></div>
 
-        {/* Form Content */}
+        {message && <div className={`message ${message.includes('success') ? 'success' : 'error'}`}>{message}</div>}
+
         <div className="contact-form-header">
           <h3 className="contact-subheading gsap-animate">GET IN TOUCH WITH US</h3>
           <h2 className="contact-heading gsap-animate">How we can help you?</h2>
         </div>
 
-        <form className="contact-form">
+        <form className="contact-form" onSubmit={handleSubmit}>
           <div className="contact-form-row">
             <div className="contact-form-group gsap-animate">
               <label>YOUR NAME*</label>
-              <div className="contact-input-container">
-                <input type="text" placeholder="What's your good name?" required />
-                <span className="contact-input-icon">😊</span>
-              </div>
+              <input type="text" name="fullName" placeholder="What's your good name?" required value={formData.fullName} onChange={handleChange} />
             </div>
 
             <div className="contact-form-group gsap-animate">
               <label>YOUR EMAIL ADDRESS*</label>
-              <div className="contact-input-container">
-                <input type="email" placeholder="Enter your email address" required />
-                <span className="contact-input-icon">✉️</span>
-              </div>
+              <input type="email" name="email" placeholder="Enter your email address" required value={formData.email} onChange={handleChange} />
             </div>
           </div>
 
           <div className="contact-form-row">
             <div className="contact-form-group gsap-animate">
               <label>YOUR PHONE NUMBER*</label>
-              <div className="contact-input-container">
-                <input type="tel" placeholder="Enter your phone number" required />
-                <span className="contact-input-icon">📞</span>
-              </div>
+              <input type="tel" name="contactNumber" placeholder="Enter your phone number" required value={formData.contactNumber} onChange={handleChange} />
             </div>
 
             <div className="contact-form-group gsap-animate">
               <label>YOUR SUBJECT</label>
-              <div className="contact-input-container">
-                <input type="text" placeholder="How can we help you?" />
-                <span className="contact-input-icon">📝</span>
-              </div>
+              <input type="text" name="subject" placeholder="How can we help you?" value={formData.subject} onChange={handleChange} />
             </div>
           </div>
 
           <div className="contact-form-group full-width gsap-animate">
             <label>YOUR MESSAGE</label>
-            <div className="contact-input-container">
-              <textarea placeholder="Describe about your message" rows="4"></textarea>
-              <span className="contact-input-icon">💭</span>
-            </div>
+            <textarea name="description" placeholder="Describe about your message" rows="4" value={formData.description} onChange={handleChange}></textarea>
           </div>
-
-          <p className="contact-privacy-notice gsap-animate">
-            We are committed to protecting your privacy. We will never collect information about you without your explicit consent.
-          </p>
 
           <button type="submit" className="contact-submit-button gsap-animate">
             <span>SEND MESSAGE</span>

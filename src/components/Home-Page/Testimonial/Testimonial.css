@@ -149,6 +149,9 @@ body {
         height: 250px;
         max-width: 100%; 
       }
+      .testmonial-header p{
+        font-size: 18px;
+      }
     
       .arrow-button {
         padding: 8px 15px;
