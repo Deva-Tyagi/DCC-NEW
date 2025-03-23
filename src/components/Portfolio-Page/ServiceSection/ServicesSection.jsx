@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './ServicesSection.css'
 
 const ServiceBox = ({ title, description, iconUrl }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -11,7 +12,7 @@ const ServiceBox = ({ title, description, iconUrl }) => {
         onMouseLeave={() => setIsHovered(false)}
       >
         <img 
-          src="/api/placeholder/48/48" 
+          src={iconUrl} 
           alt={title}
           className={`serve-icon ${isHovered ? 'rotate' : ''}`}
         />
@@ -27,22 +28,22 @@ const ServicesSection = () => {
     {
       title: "Web Development",
       description: "We create custom, responsive websites that drive results. From simple landing pages to complex e-commerce platforms, we deliver solutions that help your business grow online.",
-      iconUrl: "/web-dev-icon.png"
+      iconUrl: "https://static.vecteezy.com/system/resources/previews/031/448/053/non_2x/web-development-icon-vector.jpg"
     },
     {
       title: "App Development",
       description: "Native and cross-platform mobile applications built with the latest technologies. We ensure your app is fast, secure, and provides an exceptional user experience.",
-      iconUrl: "/app-dev-icon.png"
+      iconUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJfxZxtlstaPSdf5MVjuifuP_7J6znHWzPkQ&s"
     },
     {
       title: "Digital Marketing",
       description: "Comprehensive digital marketing strategies including social media management, content marketing, and PPC campaigns to increase your brand's online presence.",
-      iconUrl: "/digital-marketing-icon.png"
+      iconUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-ECOQ-Gbr2-2chy9s3zcvmg3wTbxTDSLxgw&s"
     },
     {
       title: "SEO Services",
       description: "Data-driven SEO solutions to improve your search rankings, drive organic traffic, and increase your website's visibility in search engine results.",
-      iconUrl: "/seo-icon.png"
+      iconUrl: "https://static.vecteezy.com/system/resources/previews/047/751/804/non_2x/technical-seo-icon-line-illustration-vector.jpg"
     }
   ];
 

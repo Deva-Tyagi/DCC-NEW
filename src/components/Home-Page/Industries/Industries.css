@@ -1,7 +1,7 @@
 .industries-page {
   position: relative;
-  height: 100vh;
-  background-color: #008B8B;
+  height: 100%;
+  background-color: #0b0d4f;
   overflow: hidden;
   padding: 20vh 0;
   display: flex;
@@ -20,7 +20,7 @@
 .map-overlay {
   position: absolute;
   inset: 0;
-  opacity: 0.1;
+  opacity: 0.2;
   pointer-events: none;
 }
 
@@ -103,8 +103,8 @@
 .industries-page::after {
   content: '';
   position: absolute;
-  width: 1000px;
-  height: 1000px;
+  width: 800px;
+  height: 800px;
   border-radius: 43%;
   background-color: rgba(0, 169, 169, 0.15);
   animation: rotate 30s linear infinite;
@@ -453,15 +453,14 @@
 }
 .industries-page {
   position: relative;
-  min-height: 100vh;
-  background-color: #008B8B;
+  height: 100%;
+  background-color: #0b0d4f;
   overflow-x: hidden;
-  overflow-y: auto;
-  padding: 120px 0 60px;
+  padding: 0 60px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-bottom: 60px;
+  padding-bottom: 20px;
 }
 
 /* Mobile Large (480px to 599px) */

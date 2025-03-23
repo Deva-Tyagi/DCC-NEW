@@ -49,7 +49,7 @@ const Focus = () => {
       {/* Right Section */}
       <div className="focus-right-section">
         <div className="focus-quotes-container">
-          <div className="focus-quote-item left" ref={(el) => (quotesRef.current[0] = el)}>
+          <div className="focus-quote-item" ref={(el) => (quotesRef.current[0] = el)}>
             <span className="focus-quote-number">01</span>
             <h3>Creative strategy</h3>
             <p>We create compelling web designs, which are the right for your target groups.</p>
@@ -63,7 +63,7 @@ const Focus = () => {
             <div className="focus-underline"></div>
           </div>
 
-          <div className="focus-quote-item left" ref={(el) => (quotesRef.current[2] = el)}>
+          <div className="focus-quote-item" ref={(el) => (quotesRef.current[2] = el)}>
             <span className="focus-quote-number">03</span>
             <h3>Great development</h3>
             <p>We create compelling web designs, which are the right for your target groups.</p>
@@ -76,4 +76,3 @@ const Focus = () => {
 };
 
 export default Focus;
-

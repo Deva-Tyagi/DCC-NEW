@@ -1,127 +1,154 @@
 .our-process {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #101214;
-    font-family: "Exo 2", serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: italic;
-    padding: 3rem 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #101214;
+  font-family: "Exo 2", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: italic;
+  padding: 3rem 1rem;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.service-area {
+  padding-bottom: 30px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+
+.service-area h2, .service-area p {
+  text-align: center;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.approach-description {
+  color: rgb(244, 253, 211);
+  width: 50%;
+  margin: auto;
+  font-size: 17px;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+
+.process-img {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.process-img img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+  .our-process {
+      padding: 4rem 2rem;
   }
-  
-  .service-area {
-    padding-bottom: 30px;
-    padding: 2rem;
-    width: 100%;
-    max-width: 1200px;
-  }
-  
-  .service-area h2, .service-area p {
-    text-align: center;
-    padding-bottom: 20px;
-  }
-  
+}
+
+/* Medium screens */
+@media (max-width: 992px) {
   .approach-description {
-    color: rgb(244, 253, 211);
-    width: 50%;
-    margin: auto;
-    font-size: 17px;
-  }
-  
-  .process-img {
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    justify-content: center;
+      width: 70%;
   }
   
   .process-img img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-  
-  /* Large screens */
-  @media (min-width: 1200px) {
-    .our-process {
-      padding: 4rem 2rem;
-    }
-  }
-  
-  /* Medium screens */
-  @media (max-width: 992px) {
-    .approach-description {
-      width: 70%;
-    }
-    
-    .process-img img {
       width: 90%;
-    }
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .our-process {
+      padding: 2rem 1rem;
   }
   
-  /* Tablets */
-  @media (max-width: 768px) {
-    .our-process {
-      padding: 2rem 1rem;
-    }
-    
-    .service-area {
+  .service-area {
       padding: 1.5rem 1rem;
-    }
-    
-    .service-area h2 {
+  }
+  
+  .service-area h2 {
       font-size: 24px;
-    }
-    
-    .approach-description {
+  }
+  
+  .approach-description {
       width: 85%;
       font-size: 16px;
-    }
-    
-    .process-img img {
-      width: 95%;
-    }
   }
   
-  /* Mobile phones */
-  @media (max-width: 480px) {
-    .our-process {
+  .process-img img {
+      width: 95%;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .our-process {
       padding: 1.5rem 0.5rem;
-    }
-    
-    .service-area {
-      padding: 1rem 0.5rem;
-    }
-    
-    .service-area h2 {
-      font-size: 20px;
-    }
-    
-    .approach-description {
-      width: 95%;
-      font-size: 14px;
-    }
   }
   
-  /* Small mobile phones */
-  @media (max-width: 320px) {
-    .our-process {
+  .service-area {
+      padding: 1rem 0.5rem;
+      width: 100%;
+  }
+  
+  .service-area h2 {
+      font-size: 20px;
+      padding-bottom: 15px;
+      width: 100%;
+  }
+  
+  .approach-description {
+      width: 100%;
+      font-size: 14px;
+      padding: 0 0.5rem 15px 0.5rem;
+  }
+  
+  .process-img {
+      width: 100%;
+      padding: 0 0.5rem;
+  }
+  
+  .process-img img {
+      width: 100%;
+  }
+}
+
+/* Small mobile phones */
+@media (max-width: 320px) {
+  .our-process {
       padding: 1rem 0.25rem;
-    }
-    
-    .service-area {
+  }
+  
+  .service-area {
       padding: 0.5rem;
-    }
-    
-    .service-area h2 {
+  }
+  
+  .service-area h2 {
       font-size: 18px;
-    }
-    
-    .approach-description {
+      padding-bottom: 10px;
+  }
+  
+  .approach-description {
       width: 100%;
       font-size: 12px;
-    }
+      padding: 0 0.25rem 10px 0.25rem;
   }
+  
+  .process-img {
+      padding: 0 0.25rem;
+  }
+}

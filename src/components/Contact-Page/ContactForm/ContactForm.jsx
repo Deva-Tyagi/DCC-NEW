@@ -103,10 +103,12 @@ const ContactForm = () => {
             <textarea name="description" placeholder="Describe about your message" rows="4" value={formData.description} onChange={handleChange}></textarea>
           </div>
 
-          <button type="submit" className="contact-submit-button gsap-animate">
-            <span>SEND MESSAGE</span>
-            <span className="contact-button-icon">→</span>
-          </button>
+          <div className="submit-button-wrapper">
+            <button type="submit" className="contact-submit-button gsap-animate">
+              <span>SEND MESSAGE</span>
+              <span className="contact-button-icon">→</span>
+            </button>
+          </div>
         </form>
       </div>
     </div>

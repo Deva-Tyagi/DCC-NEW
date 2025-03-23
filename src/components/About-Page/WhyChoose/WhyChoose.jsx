@@ -10,28 +10,39 @@ const WhyChoose = () => {
   const headingRef = useRef(null);
 
   useEffect(() => {
-    gsap.from(headingRef.current, {
-      y: -50,
-      duration: 1,
-      ease: "power3.out"
-    });
+    // Only apply animations on larger screens where they won't cause performance issues
+    const isMobile = window.innerWidth <= 768;
+    
+    if (!isMobile) {
+      gsap.from(headingRef.current, {
+        y: -50,
+        duration: 1,
+        ease: "power3.out"
+      });
 
-    gsap.from(owlImageRef.current, {
-      scale: 0.7,
-      duration: 1,
-      delay: 0.5,
-      ease: "back.out(1.7)"
-    });
+      gsap.from(owlImageRef.current, {
+        scale: 0.7,
+        duration: 1,
+        delay: 0.5,
+        ease: "back.out(1.7)"
+      });
 
-    gsap.from([leftSectionRef.current, rightSectionRef.current], {
-      x: index => index === 0 ? -100 : 100,
-      duration: 0.8,
-      delay: 1,
-      stagger: 0.2,
-      ease: "power2.out"
-    });
-
-   
+      gsap.from([leftSectionRef.current, rightSectionRef.current], {
+        x: index => index === 0 ? -100 : 100,
+        duration: 0.8,
+        delay: 1,
+        stagger: 0.2,
+        ease: "power2.out"
+      });
+    } else {
+      // Simple fade-in for mobile to prevent performance issues
+      gsap.from([headingRef.current, owlImageRef.current, leftSectionRef.current, rightSectionRef.current], {
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: "power2.out"
+      });
+    }
   }, []);
 
   return (
@@ -55,8 +66,8 @@ const WhyChoose = () => {
         </div>
       </div>
 
-      <div className="why-center-section" ref={owlImageRef}>
-        <img src={owl} alt="White owl" className="why-owl-image" />
+      <div className="why-center-section">
+        <img src={owl} alt="White owl" className="why-owl-image" ref={owlImageRef} />
       </div>
 
       <div className="why-left-section" ref={leftSectionRef}>
@@ -64,12 +75,12 @@ const WhyChoose = () => {
           <div className="why-icon-card">
             <div className="why-lightbulb-icon"></div>
             <h2>Tailored Industry Solutions</h2>
-            <p>Whether it’s real estate, hospitality, or fashion, we understand your industry’s unique needs and provide custom solutions.</p>
+            <p>Whether it's real estate, hospitality, or fashion, we understand your industry's unique needs and provide custom solutions.</p>
           </div>
           <div className="why-time-card">
             <div className="why-clock-icon"></div>
             <h2>Exceeding Expectations</h2>
-            <p>We don’t just meet expectations; we exceed them with creative, data-driven strategies to help your business stand out.</p>
+            <p>We don't just meet expectations; we exceed them with creative, data-driven strategies to help your business stand out.</p>
           </div>
         </div>
       </div>

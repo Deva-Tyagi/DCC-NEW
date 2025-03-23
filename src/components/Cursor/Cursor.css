@@ -1,0 +1,54 @@
+/* Hide default cursor on all elements */
+* {
+    cursor: none !important;
+}
+
+.cursor-ring {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #3b82f6;
+    border-radius: 50%;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+}
+
+.cursor-dot {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: #3b82f6;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    transition: width 0.15s, height 0.15s;
+}
+
+/* Hover effects */
+.cursor-hover.cursor-ring {
+    width: 65px;
+    height: 65px;
+    background-color: rgba(59, 130, 246, 0.1);
+    transition: width 0.3s, height 0.3s, background-color 0.3s;
+}
+
+.cursor-hover.cursor-dot {
+    width: 12px;
+    height: 12px;
+}
+
+/* For mobile devices - disable the custom cursor */
+@media (max-width: 768px) {
+    .cursor-ring, .cursor-dot {
+        display: none;
+    }
+    
+    * {
+        cursor: auto !important;
+    }
+}
