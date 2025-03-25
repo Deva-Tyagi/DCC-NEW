@@ -47,13 +47,13 @@ const ContactForm = () => {
     e.preventDefault();
 
     emailjs.send(
-      'service_cbzqjjg', // Service ID
+      'service_t1t7kqb', // Service ID
       'template_d72f7ua', // Template ID
       formData,
-      'TTXQvIwpY_a9NYT-7' // Public Key (User ID)
+      'x7-x0U_4DyyV1CiDW' // Public Key (User ID)
     ).then((response) => {
       setMessage('Message sent successfully!');
-      setTimeout(() => setMessage(''), 4000); // Auto-hide message after 4 seconds
+      setTimeout(() => setMessage(''), 4000); 
       setFormData({ fullName: '', email: '', contactNumber: '', subject: '', description: '' });
     }).catch((error) => {
       setMessage('Failed to send message. Please try again.');

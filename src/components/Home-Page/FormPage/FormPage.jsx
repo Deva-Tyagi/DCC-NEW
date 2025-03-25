@@ -64,7 +64,7 @@ const FormPage = () => {
     setLoading(true);
 
     emailjs.send(
-      'service_cbzqjjg',
+      'service_t1t7kqb',
       'template_d72f7ua',
       {
         fullName: formData.fullName,
@@ -75,7 +75,7 @@ const FormPage = () => {
         nda: formData.nda ? 'Yes' : 'No',
         captcha: formData.captcha
       },
-      'TTXQvIwpY_a9NYT-7'
+      'x7-x0U_4DyyV1CiDW'
     )
     .then((response) => {
       setMessage('Email sent successfully!');
@@ -146,18 +146,7 @@ const FormPage = () => {
               value={formData.contactNumber}
             />
 
-            <label htmlFor="budget">Select a Budget Range</label>
-            <select 
-              id="budget"
-              onChange={handleChange}
-              value={formData.budget}
-            >
-              <option value="" disabled>Select a budget range</option>
-              <option value="low">Below $1,000</option>
-              <option value="medium">$1,000 - $10,000</option>
-              <option value="high">Above $10,000</option>
-            </select>
-
+          
             <label htmlFor="description">
               Describe Your Project/Idea In Brief (Helps Us Come Back Better
               Prepared)*

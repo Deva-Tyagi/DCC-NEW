@@ -71,7 +71,7 @@ const NewFooter = () => {
               <p>Digital Craft Co. LLC, 2093 Philadelphia Pike #2775, Claymont DE 19703</p>
             </div>
 
-            <div className="logo">
+            <div className="footer-logo">
               <img src={logo} alt="Digital Craft Co. Logo" />
             </div>
           </div>

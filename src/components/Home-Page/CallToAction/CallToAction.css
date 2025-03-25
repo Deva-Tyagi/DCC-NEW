@@ -84,6 +84,9 @@
   
   
   @media (max-width: 768px) {
+    .cta-section{
+      height: 40vh;
+    }
     .cta-content h1 {
       font-size: 1.2rem;
     }

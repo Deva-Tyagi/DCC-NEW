@@ -162,13 +162,13 @@
   margin: 0;
 }
 
-.logo {
+.footer-logo {
   font-size: 18px; /* Reduced font size */
   font-weight: bold;
   color: #ff4500;
 }
 
-.logo img {
+.footer-logo img {
   max-width: 40px; /* Reduced size */
   height: auto;
 }
@@ -232,7 +232,7 @@
     margin-top: 15px; /* Reduced margin */
   }
   
-  .logo {
+  .footer-logo {
     margin: 10px 0; /* Reduced margin */
     font-size: 22px; /* Reduced font size */
     padding: 5px; /* Reduced padding */
@@ -248,7 +248,7 @@
     align-items: center;
   }
 
-  .logo img {
+  .footer-logo img {
     max-width: 100%;
     max-height: 100%;
   }

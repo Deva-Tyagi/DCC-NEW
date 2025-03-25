@@ -38,14 +38,14 @@ body {
   
   .right-section {
     flex: 1;
-    padding: 50px;
+    padding: 20px 50px;
     margin: 50px;
     background: #0f0f24;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 66vh;
+    max-width: 60vh;
   }
   
   .form {
