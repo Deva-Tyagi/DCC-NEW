@@ -52,21 +52,21 @@ const Focus = () => {
           <div className="focus-quote-item" ref={(el) => (quotesRef.current[0] = el)}>
             <span className="focus-quote-number">01</span>
             <h3>Creative strategy</h3>
-            <p>We create compelling web designs, which are the right for your target groups.</p>
+            <p>We craft innovative marketing strategies, which inspire engagement from your target audience.</p>
             <div className="focus-underline"></div>
           </div>
 
           <div className="focus-quote-item right" ref={(el) => (quotesRef.current[1] = el)}>
             <span className="focus-quote-number">02</span>
             <h3>Unique design</h3>
-            <p>We create compelling web designs, which are the right for your target groups.</p>
+            <p>We deliver distinctive visual aesthetics, which capture the essence of your brand identity.</p>
             <div className="focus-underline"></div>
           </div>
 
           <div className="focus-quote-item" ref={(el) => (quotesRef.current[2] = el)}>
             <span className="focus-quote-number">03</span>
             <h3>Great development</h3>
-            <p>We create compelling web designs, which are the right for your target groups.</p>
+            <p>We build powerful technical solutions, which ensure seamless functionality for your digital presence.</p>
             <div className="focus-underline"></div>
           </div>
         </div>

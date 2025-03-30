@@ -111,8 +111,7 @@ const VisionRoadmap = () => {
         <div className="vision-content-header">
           <h1 className="vision-title">Our Vision</h1>
           <p className="vision-subtitle">
-            In the continuation of the<br />
-            path of Bitix
+          In the continuation of the path of Digital Craft Co.
           </p>
         </div>
         
@@ -122,14 +121,14 @@ const VisionRoadmap = () => {
             <div className="vision-roadmap-item">
               <div className="vision-item-content">
                 <div className="vision-item-card">
-                  <div>• Blockchain Lab</div>
-                  <div>• Unholy token market</div>
+                  <div>• International expansion</div>
+                  <div>• Proprietary solutions</div>
                 </div>
                 <div className="vision-year-container">
                   <div className="vision-year-circle">
                     <div className="vision-wave-circle"></div>
                     <div className="vision-wave-circle" style={{ animationDelay: '0.5s' }}></div>
-                    <div className="vision-year">2022</div>
+                    <div className="vision-year">2025</div>
                   </div>
                   <div className="vision-connector"></div>
                 </div>
@@ -139,31 +138,31 @@ const VisionRoadmap = () => {
             <div className="vision-roadmap-item">
               <div className="vision-item-content">
                 <div className="vision-item-card">
-                  <div>• Dedicated wallet</div>
-                  <div>• Blockchain smart network</div>
-                </div>
-                <div className="vision-year-container">
-                  <div className="vision-year-circle">
-                    <div className="vision-wave-circle"></div>
-                    <div className="vision-wave-circle" style={{ animationDelay: '0.5s' }}></div>
-                    <div className="vision-year">2023</div>
-                  </div>
-                  <div className="vision-connector"></div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="vision-roadmap-item">
-              <div className="vision-item-content">
-                <div className="vision-item-card">
-                  <div>• Dedicated coin</div>
-                  <div>• Decentralized exchange</div>
+                  <div>• Official launch</div>
+                  <div>• First client projects</div>
                 </div>
                 <div className="vision-year-container">
                   <div className="vision-year-circle">
                     <div className="vision-wave-circle"></div>
                     <div className="vision-wave-circle" style={{ animationDelay: '0.5s' }}></div>
                     <div className="vision-year">2024</div>
+                  </div>
+                  <div className="vision-connector"></div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="vision-roadmap-item">
+              <div className="vision-item-content">
+                <div className="vision-item-card">
+                  <div>• Market research</div>
+                  <div>• Team building</div>
+                </div>
+                <div className="vision-year-container">
+                  <div className="vision-year-circle">
+                    <div className="vision-wave-circle"></div>
+                    <div className="vision-wave-circle" style={{ animationDelay: '0.5s' }}></div>
+                    <div className="vision-year">2023</div>
                   </div>
                   <div className="vision-connector"></div>
                 </div>

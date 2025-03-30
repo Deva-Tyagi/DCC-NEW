@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Industries.css';
 
 const Industries = () => {
@@ -17,18 +17,28 @@ const Industries = () => {
         { id: 12, name: 'MEDICAL & HEALTHCARE', x: '80%', y: '30%', icon: '⚕️', isRed: true },
         { id: 13, name: 'E-COMMERCE', x: '80%', y: '50%', icon: '🛒' }
     ];
-    
+
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 599);
+        };
+        handleResize(); // Initial check
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     return (
         <div className="industries-page">
             <div className="industries-background">
-                {/* World Map Background */}
                 <div className="map-overlay">
                     <svg width="100%" height="100%" viewBox="0 0 1000 500">
                         <path
-                             d="M0,250 C150,200 300,150 500,250 C700,350 850,300 1000,250"
-                             fill="none"
-                             stroke="white"
-                             strokeWidth="0.5"
+                            d="M0,250 C150,200 300,150 500,250 C700,350 850,300 1000,250"
+                            fill="none"
+                            stroke="white"
+                            strokeWidth="0.5"
                         />
                         {Array.from({ length: 50 }).map((_, i) => (
                             <circle
@@ -42,7 +52,6 @@ const Industries = () => {
                         ))}
                     </svg>
                 </div>
-                
                 <div className="animated-shapes">
                     <div className="shape"></div>
                     <div className="shape"></div>
@@ -52,26 +61,19 @@ const Industries = () => {
                 <div className="background-hexagon"></div>
                 <div className="background-hexagon"></div>
             </div>
-            
+
             <div className="industries-main">
                 <h1 className="industries-title">Markets We Empower</h1>
-                <div className="industries-grid">
-                    {industries.map((industry) => (
+                <div className={`industries-grid ${isMobile ? 'mobile-orbit' : ''}`}>
+                    {industries.map((industry, index) => (
                         <div
                             key={industry.id}
-                            style={{
-                                left: industry.x,
-                                top: industry.y
-                            }}
-                            className="industry-item"
+                            style={!isMobile ? { left: industry.x, top: industry.y } : {}}
+                            className={`industry-item ${isMobile ? `orbit-item-${index}` : ''}`}
                         >
                             <div className={`industry-hexagon ${industry.isRed ? 'red-variant' : ''}`}>
-                                <div className="industry-icon">
-                                    {industry.icon}
-                                </div>
-                                <p className="industry-text">
-                                    {industry.name}
-                                </p>
+                                <div className="industry-icon">{industry.icon}</div>
+                                <p className="industry-text">{industry.name}</p>
                             </div>
                         </div>
                     ))}
