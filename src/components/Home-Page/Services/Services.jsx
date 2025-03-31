@@ -104,9 +104,9 @@ const Services = () => {
         </div>
       ))}
     </div>
-    <div className="cta-card">
+    {/* <div className="cta-card">
         <button className="cta-button">Our Solutions</button>
-      </div>
+      </div> */}
     </section>
     </>
   );

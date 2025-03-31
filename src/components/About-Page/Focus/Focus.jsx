@@ -41,7 +41,7 @@ const Focus = () => {
           excellence.
         </p>
         <button className="focus-cta-button">
-          <span className="focus-button-text">SEE WHAT WE DO</span>
+          <span className="focus-button-text"><span style={{color:'black'}}>SEE</span> WHAT WE DO</span>
           <div className="focus-button-circle"></div>
         </button>
       </div>

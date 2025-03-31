@@ -1,5 +1,6 @@
 import React from "react";
 import "./Solutions.css";
+import { Link } from "lucide-react";
 
 const Solutions = () => {
   const cards = [
@@ -37,9 +38,11 @@ const Solutions = () => {
             <div className="solution-card-icon">{card.icon}</div>
             <h3 className="solution-card-title">{card.title}</h3>
             <p className="solution-card-description">{card.description}</p>
-            <a href="#" className="solution-card-link">
+           
+            <a href="/contact-us" className="solution-card-link">         
               {card.buttonText}
             </a>
+          
           </div>
           
         ))}

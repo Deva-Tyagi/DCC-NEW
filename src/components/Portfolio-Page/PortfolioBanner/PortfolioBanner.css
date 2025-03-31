@@ -1,4 +1,4 @@
-.banner {
+.portfolio-banner {
     position: relative;
     height: 100vh;
     width: 100%;
@@ -6,7 +6,7 @@
     overflow: hidden;
   }
   
-  .banner-background {
+  .portfolio-banner-background {
     position: absolute;
     inset: 0;
     background-image: url('https://preview.colorlib.com/theme/videograph/img/hero/hero-1.jpg');
@@ -15,7 +15,7 @@
     opacity: 0.5;
   }
   
-  .content-container {
+  .portfolio-content-container {
     width: 100%;
     height: 100%;
     display: flex;
@@ -23,15 +23,23 @@
     position: relative;
   }
   
-  .content-wrapper {
+  .portfolio-content-wrapper {
     position: absolute;
-    max-width: 42rem;
+    max-width: 100%;
     left: 2rem;
-    top: 40%;
+    top: 30%;
+    display: flex;
     transform: translateY(-50%);
   }
+  .portfolio-slide-title {
+    color: white;
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    white-space: pre-line;
+  }
 
-  .custom-button {
+  .portfolio-custom-button {
     position: relative;
     padding: 12px 32px;
     color: #fff;
@@ -44,8 +52,8 @@
     cursor: pointer;
   }
   
-  .custom-button::before,
-  .custom-button::after {
+  .portfolio-custom-button::before,
+  .portfolio-custom-button::after {
     content: '';
     position: absolute;
     width: 16px;
@@ -53,44 +61,44 @@
     transition: all 0.3s ease;
   }
   
-  .custom-button::before {
+  .portfolio-custom-button::before {
     top: -1px;
     left: -1px;
     border-top: 2px solid #3B82F6;
     border-left: 2px solid #3B82F6;
   }
   
-  .custom-button::after {
+  .portfolio-custom-button::after {
     bottom: -1px;
     right: -1px;
     border-bottom: 2px solid #3B82F6;
     border-right: 2px solid #3B82F6;
   }
   
-  .custom-button:hover {
+  .portfolio-custom-button:hover {
     border-color: #3B82F6;
   }
   
-  .custom-button:hover::before,
-  .custom-button:hover::after {
+  .portfolio-custom-button:hover::before,
+  .portfolio-custom-button:hover::after {
     width: calc(100% + 2px);
     height: calc(100% + 2px);
     border-color: #3B82F6;
   }
   
   @media (min-width: 768px) {
-    .content-wrapper {
+    .portfolio-content-wrapper {
       left: 4rem;
     }
   }
   
   @media (min-width: 1024px) {
-    .content-wrapper {
+    .portfolio-content-wrapper {
       left: 6rem;
     }
   }
   
-  .slide {
+  .portfolio-slide {
     position: absolute;
     transition: all 700ms;
   }
@@ -105,54 +113,42 @@
     transform: translateY(4rem);
   }
   
-  .slide-subtitle {
+  .portfolio-slide-subtitle {
     color: #d1d5db;
     font-size: 0.875rem;
     margin-bottom: 1rem;
   }
   
   @media (min-width: 768px) {
-    .slide-subtitle {
+    .portfolio-slide-subtitle {
       font-size: 1rem;
     }
-  }
-  
-  .slide-title {
-    color: white;
-    font-size: 2.25rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-    white-space: pre-line;
-  }
-  
-  @media (min-width: 768px) {
-    .slide-title {
+    .portfolio-slide-title {
       font-size: 3.75rem;
     }
+    .portfolio-slide-indicators {
+      position: absolute;
+      bottom: 2rem;
+      left: 2rem;
+      display: flex;
+      gap: 1rem;
+    }
+  
   }
   
- 
-  
-  .slide-indicators {
-    position: absolute;
-    bottom: 2rem;
-    left: 2rem;
-    display: flex;
-    gap: 1rem;
-  }
   
   @media (min-width: 768px) {
-    .slide-indicators {
+    .portfolio-slide-indicators {
       left: 4rem;
     }
   }
   
   @media (min-width: 1024px) {
-    .slide-indicators {
+    .portfolio-slide-indicators {
       left: 6rem;
     }
-  }
   
+  }
   .indicator {
     width: 2rem;
     height: 0.25rem;

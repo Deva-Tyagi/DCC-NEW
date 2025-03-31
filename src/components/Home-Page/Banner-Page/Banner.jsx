@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
 import './Banner.css';
 import owlImg from '../../Images/owl.jpg'
-import frontImg1 from '../../Images/frontImg1.png'
-import frontImg2 from '../../Images/frontImg2.png'
+import frontImg1 from '../../Images/banner-1.jpg'
+import frontImg2 from '../../Images/banner-2.jpg'
 import Navbar from '../../Navbar/Navbar';
 
 const Banner = () => {

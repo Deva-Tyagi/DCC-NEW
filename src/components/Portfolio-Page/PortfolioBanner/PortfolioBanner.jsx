@@ -6,26 +6,27 @@ const PortfolioBanner = () => {
 
   const content = [
     {
-      id: 1,
-      subtitle: "FOR WEBSITE AND VIDEO EDITING",
-      title: "VIDEOGRAPHER'S\nPORTFOLIO",
-      buttonText: "SEE MORE ABOUT US",
-      link: "#"
+      "id": 1,
+      "subtitle": "Web & App Development",
+      "title": "Custom Digital Solution",
+      "buttonText": "EXPLORE OUR SERVICES",
+      "link": "#"
     },
     {
-      id: 2,
-      subtitle: "CREATIVE PRODUCTION",
-      title: "CINEMATIC\nSTORYTELLING",
-      buttonText: "VIEW OUR WORK",
-      link: "#"
+      "id": 2,
+      "subtitle": "Digital Marketing Experts",
+      "title": "Result-Driven Strategies",
+      "buttonText": "SEE OUR WORK",
+      "link": "#"
     },
     {
-      id: 3,
-      subtitle: "PROFESSIONAL EDITING",
-      title: "VISUAL\nEXCELLENCE",
-      buttonText: "GET IN TOUCH",
-      link: "#"
+      "id": 3,
+      "subtitle": "SEO & Brand Growth",
+      "title": "Boost Your Online Presence",
+      "buttonText": "GET STARTED",
+      "link": "#"
     }
+    
   ];
 
   useEffect(() => {
@@ -36,25 +37,24 @@ const PortfolioBanner = () => {
   }, []);
 
   return (
-    <div className="banner">
-      {/* Background Image */}
-      <div className="banner-background" />
+    <div className="portfolio-banner">
+
+      <div className="portfolio-banner-background" />
       
-      {/* Content Container */}
-      <div className="content-container">
-        <div className="content-wrapper">
+      <div className="portfolio-content-container">
+        <div className="portfolio-content-wrapper">
           {content.map((slide, index) => (
             <div
               key={slide.id}
-              className={`slide ${currentSlide === index ? 'slide-active' : 'slide-inactive'}`}
+              className={`portfolio-slide ${currentSlide === index ? 'slide-active' : 'slide-inactive'}`}
             >
-              <p className="slide-subtitle">
+              <p className="portfolio-slide-subtitle">
                 {slide.subtitle}
               </p>
-              <h1 className="slide-title">
+              <h1 className="portfolio-slide-title">
                 {slide.title}
               </h1>
-              <button className="custom-button">
+              <button className="portfolio-custom-button">
                 {slide.buttonText}
               </button>
             </div>
@@ -63,7 +63,7 @@ const PortfolioBanner = () => {
       </div>
 
       {/* Slide Indicators */}
-      <div className="slide-indicators">
+      <div className="portfolio-slide-indicators">
         {content.map((_, index) => (
           <button
             key={index}

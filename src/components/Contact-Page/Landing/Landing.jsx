@@ -37,10 +37,10 @@ const Landing = () => {
     });
 
     const numbers = [
-      { ref: numberRefs.current[0], end: 9.98, decimals: 2 },
+      { ref: numberRefs.current[0], end: 10, suffix: '+' },
       { ref: numberRefs.current[1], end: 30, suffix: 'k', decimals: 0 },
       { ref: numberRefs.current[2], end: 96, suffix: '%', decimals: 0 },
-      { ref: numberRefs.current[3], end: 16, suffix: '+', decimals: 0 }
+      { ref: numberRefs.current[3], end: 12, suffix: '+', decimals: 0 }
     ];
 
     numbers.forEach((number) => {
@@ -80,16 +80,14 @@ const Landing = () => {
             Say <span ref={changingWordRef} className="landing-changing-word">salve</span> <span className="landing-emoji">☺</span>
           </h1>
           <p className="landing-description">
-            Lorem ipsum is simply dummy text the printing and typesetting 
-            industry. Lorem ipsum has been the standard dummy text ever 
-            since the when an unknown printer took galley.
+          Welcome to Digital Craft Co., where innovation meets excellence. We help businesses grow through cutting-edge digital solutions.
           </p>
         </div>
 
         <div className="landing-stats-section">
           <div className="landing-stat-item">
             <span className="landing-stat-number" ref={el => numberRefs.current[0] = el}>0</span>
-            <span className="landing-stat-label">Google reviews</span>
+            <span className="landing-stat-label">Successful Projects</span>
           </div>
           <div className="landing-stat-item">
             <span className="landing-stat-number" ref={el => numberRefs.current[1] = el}>0</span>
@@ -101,7 +99,7 @@ const Landing = () => {
           </div>
           <div className="landing-stat-item">
             <span className="landing-stat-number" ref={el => numberRefs.current[3] = el}>0</span>
-            <span className="landing-stat-label">Years of experience</span>
+            <span className="landing-stat-label">Months of experience</span>
           </div>
         </div>
 

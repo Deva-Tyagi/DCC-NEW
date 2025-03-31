@@ -12,7 +12,9 @@ const CallToAction = () => {
           to choose from a pool of highly skilled professionals who can deliver
           exceptional results.
         </p>
+        <a href="/contact-us">
         <button className="cta-button">Schedule a free consultation</button>
+        </a>
       </div>
     </div>
   );
