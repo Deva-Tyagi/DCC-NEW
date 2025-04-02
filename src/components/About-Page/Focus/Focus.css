@@ -245,6 +245,9 @@
     margin-left: 0;
     margin-right: 0;
   }
+  .focus-right-section h3 {
+    text-align: center;
+  }
 
   .focus-left-section h1 {
     font-size: 30px;
