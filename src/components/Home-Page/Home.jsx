@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Banner from './Banner-Page/Banner';
@@ -7,12 +7,35 @@ import Solutions from './Solutions/Solutions';
 import Technologies from './Technologies/Technologies';
 import Services from './Services/Services';
 import Industries from './Industries/Industries';
+import IndustriesDesktop from './Industries/IndustriesDesktop'; // Import desktop version
 import Faq from './FAQs/Faq';
 import Process from './Process/Process';
 import CallToAction from './CallToAction/CallToAction';
 import FormPage from './FormPage/FormPage';
 
 gsap.registerPlugin(ScrollTrigger);
+
+// Responsive Industries component
+const ResponsiveIndustries = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    // Set initial value
+    handleResize();
+    
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  
+  return isMobile ? <Industries /> : <IndustriesDesktop />;
+};
 
 const Home = () => {
   const sectionRef = useRef(null);
@@ -67,7 +90,7 @@ const Home = () => {
           <Services />
         </div>
         <div className="animate">
-          <Industries />
+          <ResponsiveIndustries />
         </div>
         <div className="animate">
           <Faq />
