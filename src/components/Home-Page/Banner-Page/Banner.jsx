@@ -13,7 +13,7 @@ const Banner = () => {
         y: "-100%",
         duration: 2,
         ease: "power2.out",
-        delay: 10,
+        delay: 0.5,
       })
       .to(
         ".bottom-image",
