@@ -2,9 +2,8 @@ import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
 import './Banner.css';
 import owlImg from '../../Images/owl.jpg'
-import frontImg1 from '../../Images/banner-1.jpg'
-import frontImg2 from '../../Images/banner-2.jpg'
-import Navbar from '../../Navbar/Navbar';
+import frontImg1 from '../../Images/owlup.png'
+import frontImg2 from '../../Images/owldown.png'
 
 const Banner = () => {
   useEffect(() => {
@@ -14,7 +13,7 @@ const Banner = () => {
         y: "-100%",
         duration: 2,
         ease: "power2.out",
-        delay: 0.5,
+        delay: 10,
       })
       .to(
         ".bottom-image",

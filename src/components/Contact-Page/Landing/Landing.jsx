@@ -38,8 +38,8 @@ const Landing = () => {
 
     const numbers = [
       { ref: numberRefs.current[0], end: 10, suffix: '+' },
-      { ref: numberRefs.current[1], end: 30, suffix: 'k', decimals: 0 },
-      { ref: numberRefs.current[2], end: 96, suffix: '%', decimals: 0 },
+      { ref: numberRefs.current[1], end: 15, suffix: '+', decimals: 0 },
+      { ref: numberRefs.current[2], end: 90, suffix: '%', decimals: 0 },
       { ref: numberRefs.current[3], end: 12, suffix: '+', decimals: 0 }
     ];
 
@@ -91,7 +91,7 @@ const Landing = () => {
           </div>
           <div className="landing-stat-item">
             <span className="landing-stat-number" ref={el => numberRefs.current[1] = el}>0</span>
-            <span className="landing-stat-label">Instagram followers</span>
+            <span className="landing-stat-label">Clients</span>
           </div>
           <div className="landing-stat-item">
             <span className="landing-stat-number" ref={el => numberRefs.current[2] = el}>0</span>

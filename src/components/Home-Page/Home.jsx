@@ -17,11 +17,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Responsive Industries component
 const ResponsiveIndustries = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1080);
   
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth < 1080);
     };
     
     // Set initial value

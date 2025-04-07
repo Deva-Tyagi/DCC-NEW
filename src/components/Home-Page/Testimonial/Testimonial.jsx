@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from "react";
 import "./Testimonial.css";
+import BRlogo from './Images/BRlogo.jpg';
+import FCHlogo from './Images/FCHlogo.png';
+import WaveLogo from './Images/WaveLogo.png';
+import SIPLlogo from './Images/SIPLlogo.jpg';
+import MICClogo from './Images/MICClogo.png';
+import divyaLogo from './Images/divyaLogo.jpg';
+import AGFlogo from './Images/AGFlogo.jpg';
 
 const testimonials = [
   {
-    company: "BR",
+    company: "Bloom & Root",
     user: {
       name: "Shweta Sharma",
       title: "President",
-      image: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/35af6a41332353.57a1ce913e889.jpg",
+      image: BRlogo,
     },
-    backgroundImage: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/35af6a41332353.57a1ce913e889.jpg",
+    backgroundImage: BRlogo,
     feedback: "Working with Digital Crafts Co. (DCC) has been an absolute pleasure. They designed our website, logo, visiting cards, and letterheads with precision and creativity. Their marketing expertise has significantly boosted our brand presence – highly recommended!",
   },
   {
@@ -17,9 +24,9 @@ const testimonials = [
     user: {
       name: "Bhaskar Pratap Singh",
       title: "Head of Marketing",
-      image: "https://plus.unsplash.com/premium_photo-1689530775582-83b8abdb5020?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fHww",
+      image: FCHlogo,
     },
-    backgroundImage: "https://plus.unsplash.com/premium_photo-1689530775582-83b8abdb5020?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fHww",
+    backgroundImage: FCHlogo,
     feedback: "Digital Crafts Co. (DCC) has been instrumental in enhancing our online presence through their exceptional digital marketing services. Their strategic approach and dedication have delivered impressive results, driving growth for our business.",
   },
   {
@@ -27,9 +34,9 @@ const testimonials = [
     user: {
       name: "Faizal Khureshi",
       title: "CEO",
-      image: "https://img.freepik.com/free-photo/young-adult-man-wearing-hoodie-beanie_23-2149393636.jpg",
+      image: WaveLogo,
     },
-    backgroundImage: "https://img.freepik.com/free-photo/young-adult-man-wearing-hoodie-beanie_23-2149393636.jpg",
+    backgroundImage: WaveLogo,
     feedback: "Digital Crafts Co. (DCC) did an outstanding job developing our website. Their team combined creativity with technical expertise to deliver a site that’s both visually appealing and highly functional. We're extremely satisfied with the results!",
   },
   {
@@ -37,9 +44,9 @@ const testimonials = [
     user: {
       name: "Mr. Sanjay Kr. Singh",
       title: "CTO",
-      image: "https://mir-s3-cdn-cf.behance.net/project_modules/1400/570a1745898621.58408191aee7a.jpg",
+      image: SIPLlogo,
     },
-    backgroundImage: "https://mir-s3-cdn-cf.behance.net/project_modules/1400/570a1745898621.58408191aee7a.jpg",
+    backgroundImage: SIPLlogo,
     feedback: "Digital Crafts Co. (DCC) provided exceptional website development services for us. Their team was professional, attentive to our requirements, and delivered a user-friendly, visually impressive website. We highly recommend their expertise!",
   },
   {
@@ -47,9 +54,9 @@ const testimonials = [
     user: {
       name: "Mahi Dixit",
       title: "CEO",
-      image: "https://mir-s3-cdn-cf.behance.net/project_modules/1400/570a1745898621.58408191aee7a.jpg",
+      image: MICClogo,
     },
-    backgroundImage: "https://mir-s3-cdn-cf.behance.net/project_modules/1400/570a1745898621.58408191aee7a.jpg",
+    backgroundImage: MICClogo,
     feedback: "Digital Crafts Co. (DCC) has been incredible in handling our website development, digital marketing, and social media marketing. Their creative approach and strategic execution have significantly improved our online presence. We're extremely pleased with their work!",
   },
   {
@@ -57,9 +64,9 @@ const testimonials = [
     user: {
       name: "Divya Saini",
       title: "CTO",
-      image: "https://mir-s3-cdn-cf.behance.net/project_modules/1400/570a1745898621.58408191aee7a.jpg",
+      image: divyaLogo,
     },
-    backgroundImage: "https://mir-s3-cdn-cf.behance.net/project_modules/1400/570a1745898621.58408191aee7a.jpg",
+    backgroundImage: divyaLogo,
     feedback: "Digital Crafts Co. (DCC) did a fantastic job with our video editing needs. Their team delivered high-quality, engaging content that perfectly aligned with our vision. We're extremely happy with the results and highly recommend their services!",
   },
 ];

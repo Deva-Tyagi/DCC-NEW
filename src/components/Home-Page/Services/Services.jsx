@@ -2,6 +2,12 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./Services.css";
+// import contentService from './Images/contentService.jpg';
+// import graphicService from './Images/graphicService.jpg';
+// import searchService from './Images/searchService.jpg';
+// import socialService from './Images/socialService.jpg';
+// import videoService from './Images/videoService.jpg';
+// import websiteService from './Images/websiteService.jpg'
 
 gsap.registerPlugin(ScrollTrigger);
 
