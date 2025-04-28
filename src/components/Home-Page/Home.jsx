@@ -12,6 +12,7 @@ import Faq from './FAQs/Faq';
 import Process from './Process/Process';
 import CallToAction from './CallToAction/CallToAction';
 import FormPage from './FormPage/FormPage';
+import NewTestimonialCarousel from "./Testimonial/NewTestimonialCarousel";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -80,6 +81,7 @@ const Home = () => {
         <div className="animate">
           <Testimonial />
         </div>
+        <NewTestimonialCarousel />
         <div className="animate">
           <Solutions />
         </div>

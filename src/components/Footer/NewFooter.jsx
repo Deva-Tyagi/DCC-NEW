@@ -2,17 +2,19 @@ import React from 'react';
 import './NewFooter.css';
 import logo from '../Images/dcclogo1.jpg/'
 import { Link } from 'react-router-dom';
+import dccLogo from '../Images/DCC1LOGO.png'
 
 const NewFooter = () => {
   return (
     <div className="footer-container">
     
       <div className="top-section">
-        <div className="page-top-text">
+        <img src={dccLogo}></img>
+        {/* <div className="page-top-text">
           <p>Digital</p>
           <p>Craft</p>
           <p>Co.</p>
-        </div>
+        </div> */}
       </div>
       
       <div className="curve-container">

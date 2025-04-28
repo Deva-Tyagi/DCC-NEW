@@ -51,7 +51,7 @@ const Banner = () => {
         <div className="content">
           <div className="text">
             <h1 style={{fontSize:'30px'}}><span style={{fontSize:'65px'}} className="highlight-text">Craft</span> Yourself Digitally</h1>
-            <p>Idea Your's Execution Our's Success Your's Contribution Our's Let's become partner and make it happen
+            <p>We are an AI tech driven digital marketing agency which provides Product branding and marketing solution to our client partners.
             </p>
             <button className='banner-btn'>Learn More</button>
           </div>

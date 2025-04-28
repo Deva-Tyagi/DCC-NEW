@@ -65,7 +65,7 @@ const Faq = () => {
             <h3 style={{color:"#ff4500"} }>SOME  FAQs</h3>
             <h2 style={{color:"gray"}}>Creating Digital Masterpieces</h2>
             <div>
-            <p>Get to know more about how we at Ispecia Technologies can help you achieve your business goals with our comprehensive services.</p>
+            <p>Get to know more about how we at Digital Craft Co. can help you achieve your business goals with our comprehensive services.</p>
             </div>
         </div>
     <div className="faq-page">

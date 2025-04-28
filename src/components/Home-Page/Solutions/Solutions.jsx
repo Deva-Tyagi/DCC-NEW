@@ -35,11 +35,12 @@ const Solutions = () => {
       <div className="solution-cards-container">
         {cards.map((card, index) => (
           <div className="solution-card" key={index}>
+             <a href="/contact-us" className="solution-card-link"> 
             <div className="solution-card-icon">{card.icon}</div>
             <h3 className="solution-card-title">{card.title}</h3>
             <p className="solution-card-description">{card.description}</p>
            
-            <a href="/contact-us" className="solution-card-link">         
+                   
               {card.buttonText}
             </a>
           

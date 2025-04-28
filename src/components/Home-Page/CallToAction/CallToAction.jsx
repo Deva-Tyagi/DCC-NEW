@@ -5,7 +5,7 @@ const CallToAction = () => {
   return (
     <div className="cta-section">
       <div className="cta-content">
-        <h1>Seeking a Top Frontend Developer to Enhance Web, Marketing & Media Experiences</h1>
+        <h1>Seeking Top Web Masters to Enhance Web, Marketing & Media Experiences</h1>
         <p>
           Startup businesses and enterprise MSMEs trust our team of front-end
           developers for their critical and advanced projects. Contact us today

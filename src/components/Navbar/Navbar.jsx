@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import './Navbar.css';
-import logo from '../Images/DCClogo.png';
+import logo from '../Images/DCC1LOGO.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

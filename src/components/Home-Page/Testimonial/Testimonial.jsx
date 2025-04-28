@@ -20,14 +20,14 @@ const testimonials = [
     feedback: "Working with Digital Crafts Co. (DCC) has been an absolute pleasure. They designed our website, logo, visiting cards, and letterheads with precision and creativity. Their marketing expertise has significantly boosted our brand presence – highly recommended!",
   },
   {
-    company: "Future Choice Hospitality",
+    company: "Divya Homeopathy",
     user: {
-      name: "Bhaskar Pratap Singh",
-      title: "Head of Marketing",
-      image: FCHlogo,
+      name: "Divya Saini",
+      title: "CTO",
+      image: divyaLogo,
     },
-    backgroundImage: FCHlogo,
-    feedback: "Digital Crafts Co. (DCC) has been instrumental in enhancing our online presence through their exceptional digital marketing services. Their strategic approach and dedication have delivered impressive results, driving growth for our business.",
+    backgroundImage: divyaLogo,
+    feedback: "Digital Crafts Co. (DCC) did a fantastic job with our video editing needs. Their team delivered high-quality, engaging content that perfectly aligned with our vision. We're extremely happy with the results and highly recommend their services!",
   },
   {
     company: "Wavenauticals",
@@ -59,15 +59,26 @@ const testimonials = [
     backgroundImage: MICClogo,
     feedback: "Digital Crafts Co. (DCC) has been incredible in handling our website development, digital marketing, and social media marketing. Their creative approach and strategic execution have significantly improved our online presence. We're extremely pleased with their work!",
   },
+ 
   {
-    company: "Divya Homeopathy",
+    company: "Future Choice Hospitality",
     user: {
-      name: "Divya Saini",
-      title: "CTO",
-      image: divyaLogo,
+      name: "Bhaskar Pratap Singh",
+      title: "Head of Marketing",
+      image: FCHlogo,
     },
-    backgroundImage: divyaLogo,
-    feedback: "Digital Crafts Co. (DCC) did a fantastic job with our video editing needs. Their team delivered high-quality, engaging content that perfectly aligned with our vision. We're extremely happy with the results and highly recommend their services!",
+    backgroundImage: FCHlogo,
+    feedback: "Digital Crafts Co. (DCC) has been instrumental in enhancing our online presence through their exceptional digital marketing services. Their strategic approach and dedication have delivered impressive results, driving growth for our business.",
+  },
+  {
+    company: "AGF Group",
+    user: {
+      name: "Gaurav Sachan",
+      title: "Project Manager",
+      image: AGFlogo,
+    },
+    backgroundImage: AGFlogo,
+    feedback: "Loved the way of work and professionalism of Digital Craft Co. They offer complete transparency & ensure that client's requirements are fullfilled. They provide services with minimum budget and provide classic websites. Good work team DCC!",
   },
 ];
 
@@ -121,7 +132,6 @@ const Testimonial = () => {
     );
   };
 
-  // Determine visible testimonials based on screen size
   const visibleTestimonials = isMobile 
     ? [testimonials[currentIndex]] 
     : testimonials.slice(currentIndex, currentIndex + 3);

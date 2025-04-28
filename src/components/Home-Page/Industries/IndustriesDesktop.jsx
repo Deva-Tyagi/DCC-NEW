@@ -5,7 +5,7 @@ const IndustriesDesktop = () => {
     const industries = [
         { id: 1, name: 'BEAUTY & FASHION', x: '20%', y: '30%', icon: '✂️' },
         { id: 2, name: 'SPORTS', x: '20%', y: '50%', icon: '🏆', isRed: true },
-        { id: 3, name: 'GOVERNMENT ENTITIES', x: '35%', y: '20%', icon: '🏛️' },
+        { id: 3, name: 'GOVERNMENT ENTITIES', x: '35%', y: '20%', icon: '🏛️', },
         { id: 4, name: 'HOTEL', x: '35%', y: '40%', icon: '🏨' },
         { id: 5, name: 'AUTOMOTIVE', x: '35%', y: '60%', icon: '🚗' },
         { id: 6, name: 'ENTERTAINMENT & EVENTS', x: '50%', y: '30%', icon: '🎭' },

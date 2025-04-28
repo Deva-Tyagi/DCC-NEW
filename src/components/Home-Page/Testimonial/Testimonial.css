@@ -54,9 +54,10 @@ h3 {
 .testimonial-card {
   flex: 0 0 auto;
   width: 350px;
-  height: 400px;
+  height: 420px;
   position: relative;
-  background-size: cover;
+  background-size:contain;
+  background-repeat: no-repeat;
   background-position: center;
   border-radius: 10px;
   overflow: hidden;
