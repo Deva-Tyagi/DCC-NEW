@@ -1,7 +1,7 @@
 .focus-landing-container {
   display: flex;
   justify-content: space-between;
-  background: #0a192f;
+  background: #000;
   color: #e6f1ff; 
   align-items: center;
   gap: 150px;

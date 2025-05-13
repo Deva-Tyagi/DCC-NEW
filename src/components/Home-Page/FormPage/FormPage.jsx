@@ -15,7 +15,7 @@ const FormPage = () => {
     budget: '',
     description: '',
     nda: false,
-    captcha: ''
+    captcha: ''                        
   });
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
@@ -75,7 +75,7 @@ const FormPage = () => {
         nda: formData.nda ? 'Yes' : 'No',
         captcha: formData.captcha
       },
-      'x7-x0U_4DyyV1CiDW'
+      '-UzTIlfx2uPhW3BV0'
     )
     .then((response) => {
       setMessage('Email sent successfully!');
@@ -160,7 +160,7 @@ const FormPage = () => {
               value={formData.description}
             ></textarea>
 
-            <div className="checkbox-section">
+            <div className="check-section">
               <input 
                 type="checkbox" 
                 id="nda"

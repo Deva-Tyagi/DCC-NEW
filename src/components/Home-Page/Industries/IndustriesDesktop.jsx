@@ -30,6 +30,10 @@ const IndustriesDesktop = () => {
     }, []);
 
     return (
+        <>
+        <div className="deco-cover">
+        <div className='industries-class-deco'></div>
+        </div>
         <div className="industries-page">
             <div className="industries-background">
                 <div className="map-overlay">
@@ -84,6 +88,7 @@ const IndustriesDesktop = () => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
 

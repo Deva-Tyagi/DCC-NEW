@@ -62,7 +62,7 @@ const Faq = () => {
   return (
     <div className="faq-container">
         <div className="faq-header" style={{textAlign:"center",padding:"2rem"}}>
-            <h3 style={{color:"#ff4500"} }>SOME  FAQs</h3>
+            <h3 style={{color:"#64ffdb"} }>SOME  FAQs</h3>
             <h2 style={{color:"gray"}}>Creating Digital Masterpieces</h2>
             <div>
             <p>Get to know more about how we at Digital Craft Co. can help you achieve your business goals with our comprehensive services.</p>

@@ -5,6 +5,7 @@
     font-weight: 500;
     font-style: italic;
     box-shadow: 0 20px 10px rgba(23, 20, 20, 0.4);
+    background-color: black;
   }
   .technologies-main h1{
     margin-bottom: 50px;
@@ -46,12 +47,12 @@
     }
     
     .topic-heading:hover {
-      background-color: rgba(199, 199, 241, 0.356);
+      background-color: #64ffdb56;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
     
     .topic-heading.active {
-      background-color: rgb(32, 32, 95);
+      background-color: #64ffdb85;
       font-weight: bold;
     }
     
@@ -70,7 +71,7 @@
     
     .content-title {
       color: white;
-      border-bottom: 2px solid #1e90ff;
+      border-bottom: 2px solid #64ffda;
       padding-bottom: 10px;
       font-family: Arial, sans-serif;
       margin-bottom: 20px;
@@ -88,7 +89,7 @@
       text-align: center;
       padding: 10px;
       margin-top: 20px;
-      border: 1px solid blue;
+      border: 1px solid #64ffda;
       border-radius: 15px;
       background-color: black;
       transition: transform 0.2s, box-shadow 0.2s;

@@ -50,7 +50,7 @@ const ContactForm = () => {
       'service_t1t7kqb', // Service ID
       'template_d72f7ua', // Template ID
       formData,
-      'x7-x0U_4DyyV1CiDW' // Public Key (User ID)
+      '-UzTIlfx2uPhW3BV0' // Public Key (User ID)
     ).then((response) => {
       setMessage('Message sent successfully!');
       setTimeout(() => setMessage(''), 4000); 

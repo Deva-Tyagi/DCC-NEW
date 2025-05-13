@@ -40,10 +40,10 @@ const Focus = () => {
           With over 12 years of experience, we have been constantly providing
           excellence.
         </p>
-        <button className="focus-cta-button">
+        {/* <button className="focus-cta-button">
           <span className="focus-button-text"><span style={{color:'black'}}>SEE</span> WHAT WE DO</span>
           <div className="focus-button-circle"></div>
-        </button>
+        </button> */}
       </div>
 
       {/* Right Section */}

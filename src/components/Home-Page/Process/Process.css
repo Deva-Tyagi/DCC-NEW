@@ -1,5 +1,6 @@
 .our-process {
   width: 100%;
+  height: 95vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,7 +12,7 @@
   font-style: italic;
   padding: 3rem 1rem;
   box-sizing: border-box;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .service-area {

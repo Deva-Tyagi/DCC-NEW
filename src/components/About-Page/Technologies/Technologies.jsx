@@ -65,7 +65,7 @@ function Technologies() {
   return (
   <>
   <div className="technologies-main">
-    <h1 className="technologies-title"><span style={{color:"#ff4500"}}>Technologies</span> We Specialize In</h1>
+    <h1 className="technologies-title"><span style={{color:"#64ffda"}}>Technologies</span> We Specialize In</h1>
     <div className="technologies-page">
       <div className="tech-container">
         <div className="sidebar">

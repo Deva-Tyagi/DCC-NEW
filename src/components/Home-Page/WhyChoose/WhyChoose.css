@@ -6,7 +6,7 @@
   margin: 0 auto;
   padding: 40px 20px;
   box-sizing: border-box;
-  background-color: #000000;
+  background: linear-gradient(135deg, #130722, #020a15);
   overflow: hidden; /* Prevent horizontal scroll */
   max-width: 1600px;
 }
@@ -39,7 +39,7 @@
 }
 
 .why-heading-content {
-  background-color: #000000;
+  /* background-color: #000000; */
   padding: 1rem;
   color: #ffffff;
   margin-bottom: 1rem;

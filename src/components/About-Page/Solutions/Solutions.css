@@ -1,18 +1,19 @@
 .solution-main{
-    background-color: #000000; 
-    min-height: 80vh;
-    margin-top: 70px;
+    background: #000000; 
+    min-height: 90vh;
+    padding: 90px 0px;
     font-family: "Exo 2", serif;
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: italic;
+    margin-top: -25px;
 }
 .solution-header{
     text-align: center;
 }
 
 .solution-header h2{
-    color:#ff5500
+    color:#64ffda;
 }
 .solution-header p{
     width: 75%;
@@ -25,20 +26,21 @@
     align-items: center;
     justify-content: center;
     padding: 20px;
-    margin-top: 50px;
+   
   }
   
   .solution-cards-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 34px;
+    gap: 54px;
     justify-content: center;
+    padding-top: 50px;
   }
   
   
   .solution-card {
     background: linear-gradient(135deg, #1e1e2e, #000000); 
-    border: 2px solid #007bff; 
+    border: 2px solid #64ffda; 
     border-radius: 16px;
     width: 300px;
     padding: 24px;
@@ -50,7 +52,7 @@
   
   .solution-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 8px 16px rgba(0, 123, 255, 0.5); 
+    box-shadow: 0 8px 16px #64ffda80; 
   }
   
   .solution-card:hover .solution-card-icon{
@@ -61,7 +63,7 @@
   
   .solution-card-icon {
     font-size: 48px;
-    color: #007bff; 
+    color: #64ffda; 
     margin-bottom: 16px;
    font-style: normal;
   }
@@ -84,14 +86,14 @@
   
   .solution-card-link {
     font-size: 16px;
-    color: #007bff; 
+    color: #64ffda; 
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
   }
   
   .solution-card-link:hover {
-    color: #0056b3; 
+    color: #64ffdaa7; 
   }
   
   
@@ -102,7 +104,7 @@
     }
 
     .solution-header h2{
-        color:#ff5500
+        color:#64ffda
     }
     .solution-header p{
         width: 75%;

@@ -80,13 +80,13 @@ body {
     border-color: #ff4500;
   }
   
-  .checkbox-section {
+  .check-section {
     margin-top: 20px;
     display: flex;
     align-items: center;
   }
   
-  .checkbox-section input {
+  .check-section input {
     margin-right: 10px;
   }
   

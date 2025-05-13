@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./Services.css";
+import NewServices from "./NewServices";
 // import contentService from './Images/contentService.jpg';
 // import graphicService from './Images/graphicService.jpg';
 // import searchService from './Images/searchService.jpg';
@@ -114,6 +115,7 @@ const Services = () => {
         <button className="cta-button">Our Solutions</button>
       </div> */}
     </section>
+    <NewServices />
     </>
   );
 }

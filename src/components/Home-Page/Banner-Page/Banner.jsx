@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import './Banner.css';
 import owlImg from '../../Images/owl.jpg'
@@ -30,6 +30,24 @@ const Banner = () => {
         { opacity: 1, duration: 2, ease: "power2.out" },
         "-0.5"
       );
+      
+    // Animate the blue circle
+    gsap.to(".blue-circle", {
+      scale: 1.2,
+      duration: 1.5,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut"
+    });
+    
+    // Animate the orange line
+    gsap.to(".orange-line", {
+      width: "100%",
+      duration: 3,
+      repeat: -1,
+      yoyo: true,
+      ease: "power1.inOut"
+    });
   }, []);
 
   return (
@@ -53,7 +71,10 @@ const Banner = () => {
             <h1 style={{fontSize:'30px'}}><span style={{fontSize:'65px'}} className="highlight-text">Craft</span> Yourself Digitally</h1>
             <p>We are an AI tech driven digital marketing agency which provides Product branding and marketing solution to our client partners.
             </p>
-            <button className='banner-btn'>Learn More</button>
+            <div className="simple-animation">
+              <div className="orange-line"></div>
+              <div className="blue-circle"></div>
+            </div>
           </div>
 
           <div className="image-container">

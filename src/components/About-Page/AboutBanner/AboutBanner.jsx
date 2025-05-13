@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import './AboutBanner.css';
+import { Link } from 'react-router-dom';
 
 const AboutBanner = () => {
   const loaderRef = useRef(null);
@@ -92,10 +93,12 @@ const AboutBanner = () => {
             <p>We're a fully dedicated corporate service agency<br />
                collaborating with brands all over the world.</p>
             
-            <button className="about-banner-cta-button">
+            <Link to = '/contact-us'>
+            <button className="about-banner-cta-button" >
               Get started now
               <span className="about-banner-arrow">→</span>
             </button>
+             </Link>
           </div>
         </div>
       </div>

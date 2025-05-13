@@ -1,14 +1,33 @@
 .industries-page {
     position: relative;
     height: 100%;
-    background-color: #0b0d4f;
+    background: linear-gradient(135deg, #130722, #020a15);
     overflow: hidden;
     padding: 20vh 0;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  
+
+ /* .industries-class-deco {
+  width: 2px;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, #FF3A3A, transparent);
+ position: absolute;
+ z-index: 2;
+ 
+}
+
+.deco-cover{
+ position: relative;
+ width: 100%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+  background: linear-gradient(-15deg, #130722, #020a15);
+  padding: 30px 0; 
+} */
+
   .industries-background {
     position: absolute;
     top: 0;

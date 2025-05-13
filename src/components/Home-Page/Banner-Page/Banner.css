@@ -123,7 +123,7 @@ body {
   font-style: italic;
 }
 
-.banner-btn:hover {
+.banner-btn button:hover{
   background-color: #133e71;
   transform: translateY(-3px);
 }
@@ -367,5 +367,73 @@ body {
   
   .top-image {
     border-radius: 0 0 20px 20px;
+  }
+}
+
+/* Adding these new styles to your existing CSS file */
+
+.simple-animation {
+  margin-top: 20px;
+  width: 180px;
+  height: 40px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.orange-line {
+  height: 13px;
+  width: 30%;
+  background-color: #ff4500;
+  border-radius: 12px;
+  position: relative;
+}
+
+.blue-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #0077ff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(0, 119, 255, 0.7);
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .simple-animation {
+    width: 150px;
+    height: 30px;
+  }
+  
+  .blue-circle {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .simple-animation {
+    width: 120px;
+    height: 25px;
+  }
+  
+  .blue-circle {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 375px) {
+  .simple-animation {
+    width: 100px;
+    height: 20px;
+  }
+  
+  .blue-circle {
+    width: 12px;
+    height: 12px;
   }
 }

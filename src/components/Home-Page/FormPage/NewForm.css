@@ -1,0 +1,266 @@
+/* ContactForm.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.new-contact-main {
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+  background-color: #000;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+.new-contact-container {
+  display: flex;
+  flex-direction: row;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+/* Left Side */
+.new-contact-left {
+  flex: 1;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.new-heading {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.new-heading-red {
+  color: #e53935;
+}
+
+.new-subheading {
+  font-size: 18px;
+  color: #b0b0b0;
+  margin-bottom: 48px;
+  max-width: 600px;
+}
+
+.new-expert-box {
+  display: flex;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: auto;
+  max-width: 600px;
+}
+
+.new-expert-image {
+  width: 50%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.new-expert-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.new-expert-info {
+  width: 50%;
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.new-phone-number {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  white-space: nowrap;
+}
+
+.new-talk-text {
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #b0b0b0;
+}
+
+/* Right Side - Form */
+.new-contact-right {
+  flex: 1;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #0a0a0a;
+}
+
+.new-contact-form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.new-form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.new-form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.new-full-width {
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #b0b0b0;
+}
+
+input, select, textarea {
+  padding: 14px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #121212;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  width: 100%;
+}
+
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+textarea {
+  resize: none;
+  height: 150px;
+}
+
+.new-submit-button {
+  width: 100%;
+  padding: 18px;
+  background-color: #e53935;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.new-submit-button:hover {
+  background-color: #c62828;
+}
+
+.new-submit-button:disabled {
+  background-color: #7e2927;
+  cursor: not-allowed;
+}
+
+.new-status-message {
+  margin-top: 16px;
+  text-align: center;
+  padding: 12px;
+  border-radius: 4px;
+}
+
+.new-success {
+  background-color: rgba(76, 175, 80, 0.2);
+  color: #4CAF50;
+}
+
+.new-error {
+  background-color: rgba(244, 67, 54, 0.2);
+  color: #F44336;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .new-contact-container {
+    flex-direction: column;
+  }
+  
+  .new-contact-left, .new-contact-right {
+    padding: 40px 20px;
+  }
+  
+  .new-heading {
+    font-size: 36px;
+  }
+  
+  .new-expert-box {
+    margin-bottom: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .new-form-row {
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .new-expert-box {
+    flex-direction: column;
+  }
+  
+  .new-expert-image, .new-expert-info {
+    width: 100%;
+  }
+  
+  .new-expert-image {
+    height: 200px;
+  }
+  
+  .new-expert-info {
+    padding: 24px;
+  }
+  
+  .new-heading {
+    font-size: 32px;
+  }
+  
+  .new-phone-number {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .new-contact-left, .new-contact-right {
+    padding: 30px 16px;
+  }
+  
+  .new-heading {
+    font-size: 28px;
+  }
+  
+  .new-subheading {
+    font-size: 16px;
+  }
+  
+  .new-phone-number {
+    font-size: 24px;
+  }
+}
