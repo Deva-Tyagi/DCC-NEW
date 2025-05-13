@@ -2,43 +2,48 @@ import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './PortfolioSection.css';
+import micc from '../../Images/micc.png';
+import sipl from '../../Images/sipl.jpg';
+import agf from '../../Images/agf.png';
+import wave from '../../Images/WaveLogo.png';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
 const PROJECTS = [
-  {
-    id: 'pixel-pioneers',
-    title: 'Pixel Pioneers',
-    subtitle: 'Healthcare Innovation',
-    description: 'Transforming medical technology through cutting-edge digital solutions.',
-    image: 'https://i0.wp.com/farm4.static.flickr.com/3408/3410783929_051d93bc86.jpg',
-    technologies: ['React', 'AI', 'Cloud']
-  },
-  {
-    id: 'film-sphere',
-    title: 'FilmSphere',
-    subtitle: 'Digital Entertainment',
-    description: 'Revolutionizing content delivery with intelligent streaming platforms.',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8YtNGMh50_X9FjCFLvDwDL2lCMr-iQdoAAA&s',
-    technologies: ['Node.js', 'Streaming', 'UX Design']
-  },
-  {
-    id: 'code-craftsmen',
-    title: 'Code Craftsmen',
-    subtitle: 'Financial Technology',
-    description: 'Crafting sophisticated financial solutions with precision and innovation.',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0gYCF7uu2incXqM9JugQhV6Z2k_Ph3tLziQ&s',
-    technologies: ['Blockchain', 'Fintech', 'Security']
-  },
-  {
-    id: 'quantum-quotient',
-    title: 'Quantum Quotient',
-    subtitle: 'Future Technologies',
-    description: 'Pushing the boundaries of technological innovation and research.',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaJaz0ELJCqaC2M03-DLoyKEuSK3PTBeoqxA&s',
-    technologies: ['Machine Learning', 'Quantum Computing', 'Research']
-  }
+{
+  id: 'micc',
+  title: 'MICC',
+  subtitle: 'Educational Institute',
+  description: 'Empowering modern education with smart digital tools and seamless user experiences.',
+  image: micc,
+  technologies: ['React.Js', 'Next.Js', 'EmailJs']
+},
+{
+  id: 'SIPL',
+  title: 'SIPL',
+  subtitle: 'Real Estate',
+  description: 'Elevating real estate experiences through interactive platforms and intelligent design.',
+  image: sipl,
+  technologies: ['Node.Js', 'React.Js', 'UX Design']
+},
+{
+  id: 'Agf',
+  title: 'AGF',
+  subtitle: 'Real Estate',
+  description: 'Delivering elegant and effective real estate solutions with user-first interfaces.',
+  image: agf,
+  technologies: ['React.Js', 'UX Design']
+},
+{
+  id: 'wave',
+  title: 'Wave-Nauticals',
+  subtitle: 'Antique Things',
+  description: 'Bringing timeless antiques to life through immersive and elegant web design.',
+  image: wave,
+  technologies: ['Wordpress', 'UX Design']
+}
+
 ];
 
 const PortfolioSection = () => {

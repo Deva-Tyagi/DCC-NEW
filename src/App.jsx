@@ -8,8 +8,9 @@ import PortfolioMain from "./components/Portfolio-Page/PortfolioMain/PortfolioMa
 import Navbar from "./components/Navbar/Navbar";
 import AboutMain from "./components/About-Page/AboutMain";
 import ContactMain from "./components/Contact-Page/ContactMain";
-import NewFooter from "./components/Footer/NewFooter";
+// import NewFooter from "./components/Footer/NewFooter";
 import Cursor from "./components/Cursor/Cursor";
+import Footer from "./components/Footer/Footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -38,7 +39,8 @@ const App = () => {
             <Route path="/portfolio" element={<PortfolioMain />} />
             <Route path="/contact-us" element={<ContactMain />} />
           </Routes>
-          <NewFooter />
+          {/* <NewFooter /> */}
+          <Footer />
         </Router>
       </div>
     </>

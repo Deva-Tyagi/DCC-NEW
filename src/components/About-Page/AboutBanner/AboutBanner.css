@@ -42,7 +42,8 @@
     position: relative;
     width: 100%;
     height: 100%;
-    background-image: url('https://craftohtml.themezaa.com/images/demo-corporate-main-slider-02.jpg');
+    /* background-image: url('https://craftohtml.themezaa.com/images/demo-corporate-main-slider-02.jpg'); */
+    background-image: url('../../Images/aboutImg.jpg');
     background-size: cover;
     background-position: center;
     display: flex;

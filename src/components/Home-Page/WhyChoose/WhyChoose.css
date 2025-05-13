@@ -61,15 +61,14 @@
 .why-heading-content h1 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: teal;
+  color: rgb(16, 201, 201);
   padding-top: 20px;
-  margin-bottom: 1rem;
-  word-wrap: break-word; /* Ensure text wraps properly */
+  word-wrap: break-word; 
 }
 
 .why-heading-content p {
-  color: #666;
-  font-size: 1.2rem;
+  color: #ffffff;
+  font-size: 1.1rem;
   line-height: 1.6;
 }
 

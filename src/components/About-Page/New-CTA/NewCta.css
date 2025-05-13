@@ -3,7 +3,10 @@
 .new-cta-section {
   position: relative;
   overflow: hidden;
-  background-color: #000;
+  background-image: url('../../Images/ctaBgOwl.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: white;
   padding: 100px 20px;
   box-sizing: border-box;
@@ -15,7 +18,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(10, 10, 10, 1) 100%);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(10, 10, 10, 1) 100%);
   z-index: 1;
 }
 

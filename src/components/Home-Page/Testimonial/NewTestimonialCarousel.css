@@ -96,8 +96,8 @@ h3 {
 
 .newTestimonialCard {
   position: absolute;
-  width: 350px; 
-  height: 380px; 
+  width: 370px; 
+  height: 400px; 
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -162,7 +162,7 @@ h3 {
 }
 
 .newClientName {
-  font-size: 16px; /* Reduced font size */
+  font-size: 18px; /* Reduced font size */
   font-weight: 600;
   margin-bottom: 2px; /* Reduced margin */
 }
@@ -205,12 +205,12 @@ h3 {
   align-items: flex-start;
   overflow-y: auto;
   padding-right: 4px;
-  max-height: 200px; /* Reduced max height */
+  max-height: 200px; 
 }
 
 .newQuote {
-  font-size: 13px; /* Reduced font size */
-  line-height: 1.4; /* Reduced line height */
+  font-size: 14px; 
+  line-height: 1.4; 
   color: #e0e0e0;
   font-style: italic;
 }

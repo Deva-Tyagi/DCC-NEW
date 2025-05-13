@@ -11,6 +11,7 @@ import NewForm from "./FormPage/NewForm";
 import NewServices from "./Services/NewServices";
 import PortfolioSection from "./Portfolio/PortfolioSection";
 import WhyChoose from "./WhyChoose/WhyChoose";
+import NewCta from "../About-Page/New-CTA/NewCta";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -121,9 +122,9 @@ const Home = () => {
             <NewTestimonialCarousel />
         </div>
       
-        <div className="animate">
-          <CallToAction />
-        </div>
+       
+          <NewCta />
+        
         <div className="animate">
           <Process />
         </div>
