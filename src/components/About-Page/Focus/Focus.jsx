@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./Focus.css";
@@ -7,27 +7,61 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Focus = () => {
   const quotesRef = useRef([]);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check if the screen is mobile-sized
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768); // Common breakpoint for mobile devices
+    };
+
+    // Initial check
+    checkIsMobile();
+
+    // Add event listener for window resize
+    window.addEventListener('resize', checkIsMobile);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('resize', checkIsMobile);
+    };
+  }, []);
 
   useEffect(() => {
-    // Animate quotes on scroll
-    quotesRef.current.forEach((quote, index) => {
-      gsap.fromTo(
-        quote,
-        { opacity: 0, y: -50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "bounce.out",
-          scrollTrigger: {
-            trigger: quote,
-            start: "top 85%",
-          },
-          delay: index * 0.2,
+    // Only apply animations if not on mobile
+    if (!isMobile) {
+      // Animate quotes on scroll
+      quotesRef.current.forEach((quote, index) => {
+        gsap.fromTo(
+          quote,
+          { opacity: 0, y: -50 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "bounce.out",
+            scrollTrigger: {
+              trigger: quote,
+              start: "top 85%",
+            },
+            delay: index * 0.2,
+          }
+        );
+      });
+      
+      // Cleanup function for desktop animations
+      return () => {
+        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      };
+    } else {
+      // For mobile, ensure all quotes are visible without animations
+      quotesRef.current.forEach((quote) => {
+        if (quote) {
+          gsap.set(quote, { opacity: 1, y: 0 });
         }
-      );
-    });
-  }, []);
+      });
+    }
+  }, [isMobile]); // Re-run when isMobile changes
 
   return (
     <div className="focus-landing-container">

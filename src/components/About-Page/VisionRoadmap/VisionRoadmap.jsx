@@ -1,74 +1,34 @@
 'use client';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import './VisionRoadmap.css';
 
 const VisionRoadmap = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check if the screen is mobile-sized
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+    
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768); // Common breakpoint for mobile devices
+    };
 
-    // Existing header timeline animation
-    const headerTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.vision-content-header',
-        start: 'top 80%',
-        toggleActions: 'play none none reverse'
-      }
-    });
+    // Initial check
+    checkIsMobile();
 
-    headerTl
-      .fromTo('.vision-title', {
-        y: 50,
-        opacity: 0
-      }, {
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-        ease: 'power2.out'
-      })
-      .fromTo('.vision-subtitle', {
-        y: 30,
-        opacity: 0
-      }, {
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-        ease: 'power2.out'
-      }, '-=0.4');
+    // Add event listener for window resize
+    window.addEventListener('resize', checkIsMobile);
 
-    // Existing roadmap items timeline
-    const roadmapTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.vision-roadmap-container',
-        start: 'top 70%',
-        toggleActions: 'play none none reverse'
-      }
-    });
+    // Cleanup
+    return () => {
+      window.removeEventListener('resize', checkIsMobile);
+    };
+  }, []);
 
-    roadmapTl
-      .fromTo('.vision-roadmap-item', {
-        x: -50,
-        opacity: 0
-      }, {
-        x: 0,
-        opacity: 1,
-        stagger: 0.2,
-        duration: 0.6,
-        ease: 'power2.out'
-      })
-      .fromTo('.vision-year-circle', {
-        scale: 0,
-        opacity: 0
-      }, {
-        scale: 1,
-        opacity: 1,
-        stagger: 0.2,
-        duration: 0.6,
-        ease: 'power2.out'
-      }, '-=0.8');
-
-    // Wave animations
+  useEffect(() => {
+    // Wave animations - these will work on both mobile and desktop
     const waves = document.querySelectorAll('.vision-wave-circle');
     waves.forEach(wave => {
       gsap.to(wave, {
@@ -81,29 +41,98 @@ const VisionRoadmap = () => {
       });
     });
 
-    // Existing timeline line animation
-    gsap.fromTo('.vision-timeline-line', 
-      {
-        scaleY: 0,
-        transformOrigin: 'top'
-      },
-      {
-        scaleY: 1,
-        duration: 1,
-        ease: 'none',
+    // Only apply scroll animations if not on mobile
+    if (!isMobile) {
+      // Header timeline animation
+      const headerTl = gsap.timeline({
         scrollTrigger: {
-          trigger: '.vision-timeline-line',
-          start: 'top 70%',
-          end: 'bottom 70%',
-          scrub: 0.5
+          trigger: '.vision-content-header',
+          start: 'top 80%',
+          toggleActions: 'play none none reverse'
         }
-      }
-    );
+      });
+
+      headerTl
+        .fromTo('.vision-title', {
+          y: 50,
+          opacity: 0
+        }, {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: 'power2.out'
+        })
+        .fromTo('.vision-subtitle', {
+          y: 30,
+          opacity: 0
+        }, {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: 'power2.out'
+        }, '-=0.4');
+
+      // Roadmap items timeline
+      const roadmapTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.vision-roadmap-container',
+          start: 'top 70%',
+          toggleActions: 'play none none reverse'
+        }
+      });
+
+      roadmapTl
+        .fromTo('.vision-roadmap-item', {
+          x: -50,
+          opacity: 0
+        }, {
+          x: 0,
+          opacity: 1,
+          stagger: 0.2,
+          duration: 0.6,
+          ease: 'power2.out'
+        })
+        .fromTo('.vision-year-circle', {
+          scale: 0,
+          opacity: 0
+        }, {
+          scale: 1,
+          opacity: 1,
+          stagger: 0.2,
+          duration: 0.6,
+          ease: 'power2.out'
+        }, '-=0.8');
+
+      // Timeline line animation
+      gsap.fromTo('.vision-timeline-line', 
+        {
+          scaleY: 0,
+          transformOrigin: 'top'
+        },
+        {
+          scaleY: 1,
+          duration: 1,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '.vision-timeline-line',
+            start: 'top 70%',
+            end: 'bottom 70%',
+            scrub: 0.5
+          }
+        }
+      );
+    } else {
+      // For mobile, ensure all elements are visible without scroll animations
+      gsap.set('.vision-title, .vision-subtitle', { opacity: 1, y: 0 });
+      gsap.set('.vision-roadmap-item', { opacity: 1, x: 0 });
+      gsap.set('.vision-year-circle', { opacity: 1, scale: 1 });
+      gsap.set('.vision-timeline-line', { scaleY: 1 });
+    }
 
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
-  }, []);
+  }, [isMobile]); // Re-run when isMobile changes
 
   return (
     <div className="vision-container">
