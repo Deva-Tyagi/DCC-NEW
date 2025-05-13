@@ -45,34 +45,59 @@ const PortfolioSection = () => {
   const [hoveredProject, setHoveredProject] = useState(null);
   const sectionRef = useRef(null);
   const containerRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
 
+  // Check if the screen is mobile-sized
   useEffect(() => {
-    const section = sectionRef.current;
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768); // Common breakpoint for mobile devices
+    };
 
-    // Section reveal animation
-    const revealTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: section,
-        start: 'top 80%',
-        toggleActions: 'play none none reverse'
-      }
-    });
+    // Initial check
+    checkIsMobile();
 
-    revealTl.fromTo(
-      section,
-      { opacity: 0, y: 100 },
-      { 
-        opacity: 1, 
-        y: 0, 
-        duration: 1.2, 
-        ease: 'power4.out' 
-      }
-    );
+    // Add event listener for window resize
+    window.addEventListener('resize', checkIsMobile);
 
+    // Cleanup
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      window.removeEventListener('resize', checkIsMobile);
     };
   }, []);
+
+  useEffect(() => {
+    // Only apply scroll animations if not on mobile
+    if (!isMobile) {
+      const section = sectionRef.current;
+
+      // Section reveal animation
+      const revealTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          start: 'top 80%',
+          toggleActions: 'play none none reverse'
+        }
+      });
+
+      revealTl.fromTo(
+        section,
+        { opacity: 0, y: 100 },
+        { 
+          opacity: 1, 
+          y: 0, 
+          duration: 1.2, 
+          ease: 'power4.out' 
+        }
+      );
+
+      return () => {
+        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      };
+    } else {
+      // For mobile, ensure the section is visible without animations
+      gsap.set(sectionRef.current, { opacity: 1, y: 0 });
+    }
+  }, [isMobile]); // Re-run when isMobile changes
 
   const handleMouseEnter = (index) => {
     setHoveredProject(index);
@@ -121,14 +146,6 @@ const PortfolioSection = () => {
                   <h3>{project.title}</h3>
                   <h4>{project.subtitle}</h4>
                   <p>{project.description}</p>
-                  
-                  {/* <a href="#" className="project-link">
-                    View Project
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                  </a> */}
                 </div>
               </div>
             </div>

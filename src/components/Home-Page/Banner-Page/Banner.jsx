@@ -71,9 +71,11 @@ const Banner = () => {
             <h1 style={{fontSize:'30px'}}><span style={{fontSize:'65px'}} className="highlight-text">Craft</span> Yourself Digitally</h1>
             <p>We are an AI tech driven digital marketing agency which provides Product branding and marketing solution to our client partners.
             </p>
+            <div className="animation-main">
             <div className="simple-animation">
               <div className="orange-line"></div>
               <div className="blue-circle"></div>
+            </div>
             </div>
           </div>
 

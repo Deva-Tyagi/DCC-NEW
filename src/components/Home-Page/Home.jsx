@@ -10,6 +10,7 @@ import NewForm from "./FormPage/NewForm";
 import NewServices from "./Services/NewServices";
 import PortfolioSection from "./Portfolio/PortfolioSection";
 import WhyChoose from "./WhyChoose/WhyChoose";
+import Process from "./Process/Process";
 
 gsap.registerPlugin(ScrollTrigger);
 
