@@ -2,16 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Banner from './Banner-Page/Banner';
-// import Testimonial from './Testimonial/Testimonial';
-// import Solutions from '../About-Page/Solutions/Solutions';
-// import Technologies from '../About-Page/Technologies/Technologies';
-// import Services from './Services/Services';
 import Industries from './Industries/Industries';
-import IndustriesDesktop from './Industries/IndustriesDesktop'; // Import desktop version
-// import Faq from '../About-Page/FAQs/Faq';
-import Process from './Process/Process';
+import IndustriesDesktop from './Industries/IndustriesDesktop'; // Import desktop version import Process from './Process/Process';
 import CallToAction from './CallToAction/CallToAction';
-// import FormPage from './FormPage/FormPage';
 import NewTestimonialCarousel from "./Testimonial/NewTestimonialCarousel";
 import NewForm from "./FormPage/NewForm";
 import NewServices from "./Services/NewServices";
@@ -82,18 +75,12 @@ const Home = () => {
     <>
       <Banner />
       <section className="animated-section" ref={sectionRef}>
-      {/* <div className="animate">
-          <Services />
-        </div> */}
         <div className="animate">
           <NewServices />
         </div>
         <div className="animate">
           <ResponsiveIndustries />
         </div>
-        {/* <div className="animate">
-          <Testimonial />
-        </div> */}
         <div className="animate">
           <WhyChoose />
         </div>
@@ -108,22 +95,9 @@ const Home = () => {
         <div className="animate">
           <CallToAction />
         </div>
-        {/* <div className="animate">
-          <Solutions />
-        </div> */}
-        {/* <div className="animate">
-          <Technologies />
-        </div> */}
-        {/* <div className="animate">
-          <Faq />
-        </div> */}
         <div className="animate">
           <Process />
         </div>
-       
-        {/* <div className="animate">
-          <FormPage />
-        </div> */}
         <div className="animate">
           <NewForm />
         </div>
