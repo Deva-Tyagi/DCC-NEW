@@ -7,11 +7,11 @@ import owlgif from '../../Images/owl-gif.gif';
 const NewForm = () => {
   const form = useRef();
   const [formData, setFormData] = useState({
-    fullName: '',       // Changed to match EmailJS template
-    contactNumber: '',  // Changed to match EmailJS template
+    name: '',       
+    phone: '',  
     email: '',
-    subject: 'Website Design', // Changed to match EmailJS template
-    description: ''     // Changed to match EmailJS template
+    subject: 'Website Design', 
+    message: ''     
   });
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState({ message: '', isError: false });
@@ -60,11 +60,11 @@ const NewForm = () => {
           isError: false 
         });
         setFormData({
-          fullName: '',
-          contactNumber: '',
+          name: '',
+          phone: '',
           email: '',
           subject: 'Website Design',
-          description: ''
+          message: ''
         });
       }, (error) => {
         console.error('Error sending email:', error);
@@ -103,23 +103,23 @@ const NewForm = () => {
           <form ref={form} className="new-contact-form" onSubmit={sendEmail}>
             <div className="new-form-row">
               <div className="new-form-group">
-                <label htmlFor="fullName">NAME</label>
+                <label htmlFor="name">NAME</label>
                 <input
                   type="text"
-                  id="fullName"
-                  name="fullName"
-                  value={formData.fullName}
+                  id="name"
+                  name="name"
+                  value={formData.name}
                   onChange={handleChange}
                   required
                 />
               </div>
               <div className="new-form-group">
-                <label htmlFor="contactNumber">PHONE NUMBER</label>
+                <label htmlFor="phone">PHONE NUMBER</label>
                 <input
                   type="tel"
-                  id="contactNumber"
-                  name="contactNumber"
-                  value={formData.contactNumber}
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
                   onChange={handleChange}
                   required
                 />
@@ -157,11 +157,11 @@ const NewForm = () => {
             </div>
             
             <div className="new-form-group new-full-width">
-              <label htmlFor="description">PROJECT DETAILS</label>
+              <label htmlFor="message">PROJECT DETAILS</label>
               <textarea
-                id="description"
-                name="description"
-                value={formData.description}
+                id="message"
+                name="message"
+                value={formData.message}
                 onChange={handleChange}
                 rows="5"
               ></textarea>

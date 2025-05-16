@@ -9,11 +9,11 @@ gsap.registerPlugin(ScrollTrigger);
 const ContactForm = () => {
   const formRef = useRef(null);
   const [formData, setFormData] = useState({
-    fullName: '',
+    name: '',
     email: '',
-    contactNumber: '',
+    phone: '',
     subject: '',
-    description: ''
+    message: ''
   });
   const [message, setMessage] = useState('');
 
@@ -54,7 +54,7 @@ const ContactForm = () => {
     ).then((response) => {
       setMessage('Message sent successfully!');
       setTimeout(() => setMessage(''), 4000); 
-      setFormData({ fullName: '', email: '', contactNumber: '', subject: '', description: '' });
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
     }).catch((error) => {
       setMessage('Failed to send message. Please try again.');
     });
@@ -77,7 +77,7 @@ const ContactForm = () => {
           <div className="contact-form-row">
             <div className="contact-form-group gsap-animate">
               <label>YOUR NAME*</label>
-              <input type="text" name="fullName" placeholder="What's your good name?" required value={formData.fullName} onChange={handleChange} />
+              <input type="text" name="name" placeholder="What's your good name?" required value={formData.name} onChange={handleChange} />
             </div>
 
             <div className="contact-form-group gsap-animate">
@@ -89,7 +89,7 @@ const ContactForm = () => {
           <div className="contact-form-row">
             <div className="contact-form-group gsap-animate">
               <label>YOUR PHONE NUMBER*</label>
-              <input type="tel" name="contactNumber" placeholder="Enter your phone number" required value={formData.contactNumber} onChange={handleChange} />
+              <input type="tel" name="phone" placeholder="Enter your phone number" required value={formData.phone} onChange={handleChange} />
             </div>
 
             <div className="contact-form-group gsap-animate">
@@ -100,7 +100,7 @@ const ContactForm = () => {
 
           <div className="contact-form-group full-width gsap-animate">
             <label>YOUR MESSAGE</label>
-            <textarea name="description" placeholder="Describe about your message" rows="4" value={formData.description} onChange={handleChange}></textarea>
+            <textarea name="message" placeholder="Describe about your message" rows="4" value={formData.message} onChange={handleChange}></textarea>
           </div>
 
           <div className="submit-button-wrapper">
