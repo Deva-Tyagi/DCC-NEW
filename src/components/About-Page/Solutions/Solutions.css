@@ -2,10 +2,6 @@
     background: #000000; 
     min-height: 90vh;
     padding: 90px 0px;
-    font-family: "Exo 2", serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: italic;
     margin-top: -25px;
 }
 .solution-header{

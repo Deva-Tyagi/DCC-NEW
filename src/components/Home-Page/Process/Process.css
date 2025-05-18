@@ -6,10 +6,6 @@
   align-items: center;
   justify-content: center;
   background-color: #101214;
-  font-family: "Exo 2", serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: italic;
   padding: 3rem 1rem;
   box-sizing: border-box;
   /* overflow-x: hidden; */
@@ -27,6 +23,9 @@
   text-align: center;
   padding-bottom: 20px;
   box-sizing: border-box;
+}
+.service-area h2{
+  font-size: 35px;
 }
 
 .approach-description {

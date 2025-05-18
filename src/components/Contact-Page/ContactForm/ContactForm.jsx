@@ -61,7 +61,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="contact-wrapper">
+    <div className="contact-wrapper" id='next-section'>
       <div className="contact-container" ref={formRef}>
         <div className="leaf-decoration left"></div>
         <div className="leaf-decoration right"></div>

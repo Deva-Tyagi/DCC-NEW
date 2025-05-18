@@ -1,5 +1,4 @@
-// AboutBanner.jsx
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import './AboutBanner.css';
 import { Link } from 'react-router-dom';
@@ -10,6 +9,23 @@ const AboutBanner = () => {
   const circle1Ref = useRef(null);
   const circle2Ref = useRef(null);
   const contentRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check screen size and update state
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Check on initial load
+    checkScreenSize();
+
+    // Add event listener for window resize
+    window.addEventListener('resize', checkScreenSize);
+
+    // Cleanup
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
 
   useEffect(() => {
     const tl = gsap.timeline();
@@ -76,7 +92,10 @@ const AboutBanner = () => {
 
       {/* Main Content */}
       <div className="about-banner-main-container">
-        <div ref={imageRef} className="about-banner-background-image">
+        <div 
+          ref={imageRef} 
+          className={`about-banner-background-image ${isMobile ? 'mobile-background' : 'desktop-background'}`}
+        >
           <div className="circles-container">
             <div ref={circle2Ref} className="circle circle-2"></div>
             <div ref={circle1Ref} className="circle circle-1"></div>
@@ -93,12 +112,12 @@ const AboutBanner = () => {
             <p>We're a fully dedicated corporate service agency<br />
                collaborating with brands all over the world.</p>
             
-            <Link to = '/contact-us'>
-            <button className="about-banner-cta-button" >
-              Get started now
-              <span className="about-banner-arrow">→</span>
-            </button>
-             </Link>
+            <Link to='/contact-us'>
+              <button className="about-banner-cta-button">
+                Get started now
+                <span className="about-banner-arrow">→</span>
+              </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -7,7 +7,7 @@
   padding: 40px 20px;
   box-sizing: border-box;
   background: linear-gradient(135deg, #130722, #020a15);
-  overflow: hidden; /* Prevent horizontal scroll */
+  overflow: hidden; 
   max-width: 1600px;
 }
 

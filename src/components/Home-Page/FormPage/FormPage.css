@@ -6,10 +6,6 @@ body {
     min-height: 100vh;
     background: linear-gradient(135deg, #2d0068, #002452);
     color: white;
-    font-family: "Exo 2", serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: italic;
   }
   
   .form-page {

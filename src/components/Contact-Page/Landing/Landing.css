@@ -12,7 +12,10 @@
   margin: 0 auto;
   width: 100%;
 }
-
+html, body {
+  overflow-y: auto !important;
+  scroll-behavior: smooth !important;
+}
 /* Header Section */
 .landing-header-section {
   display: flex;

@@ -1,4 +1,4 @@
-.team-section {
+/* .team-section {
     background-image: url('https://preview.colorlib.com/theme/videograph/img/team-bg.jpg.webp');
     width: 100%;
     color: white;
@@ -23,7 +23,6 @@
     margin-top: 10px;
   }
   
-  /* Team Grid */
   .team-grid {
     display: flex;
     justify-content: center;
@@ -46,12 +45,10 @@
     transition: all 0.3s ease-in-out;
   }
   
-  /* Hover Effect */
   .team-member:hover img {
     filter: brightness(0.3);
   }
   
-  /* Member Info Popup */
   .member-info {
     position: absolute;
     bottom: 20px;
@@ -92,7 +89,6 @@
     transform: translateY(-100px);
   }
   
-  /* Meet Our Team Button */
   .meet-button {
     position: relative;
     margin-top: 20px;
@@ -131,7 +127,6 @@
     background: #00aaff;
   }
   
-  /* Responsive Media Queries */
   @media (max-width: 768px) {
     .team-grid {
         flex-wrap: wrap;
@@ -139,8 +134,8 @@
     }
   
     .team-member {
-      width: 100%; /* Full-width cards for very small screens */
-      height: auto; /* Maintain aspect ratio */
+      width: 100%;
+      height: auto; 
     }
     .member-3 img{
       width: 100%;
@@ -158,8 +153,8 @@
   
   @media (max-width: 576px) {
     .team-member {
-        width: 100%; /* Full-width cards for very small screens */
-        height: auto; /* Maintain aspect ratio */
+        width: 100%; 
+        height: auto;
     }
   
     .member-info h3 {
@@ -170,4 +165,4 @@
         font-size: 12px;
     }
   }
-  
+   */

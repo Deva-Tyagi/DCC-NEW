@@ -34,13 +34,15 @@
 
 .new-heading {
   font-size: 48px;
-  font-weight: 700;
+  font-weight: 400;
   margin-bottom: 24px;
   line-height: 1.2;
 }
 
 .new-heading-red {
   color: #e53935;
+    font-size: 48px;
+   font-weight: 700;
 }
 
 .new-subheading {

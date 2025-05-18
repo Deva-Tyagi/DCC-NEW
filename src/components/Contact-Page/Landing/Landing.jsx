@@ -72,6 +72,47 @@ const Landing = () => {
     };
   }, []);
 
+  const scrollToNextSection = (e) => {
+    e.preventDefault(); 
+    
+    const viewportHeight = window.innerHeight;
+    const currentScrollY = window.scrollY;
+    const nextPosition = currentScrollY + viewportHeight;
+        
+    // Method 1: Try smooth scroll
+    // try {
+    //   window.scrollTo({
+    //     top: nextPosition,
+    //     left: 0,
+    //     behavior: 'smooth'
+    //   });
+    // } catch (error) {
+      
+    //   // Method 2: Try GSAP scroll (if available)
+    //   // try {
+    //   //   gsap.to(window, {
+    //   //     duration: 1,
+    //   //     scrollTo: nextPosition,
+    //   //     ease: "power2.out"
+    //   //   });
+    //   // } catch (gsapError) {
+    //   //   console.log('GSAP scroll failed, using instant scroll');
+        
+    //   //   // Method 3: Instant scroll fallback
+    //   //   // window.scrollTo(0, nextPosition);
+    //   //   // console.log('Instant scroll executed');
+    //   // }
+    // }
+    
+    // Method 4: Force scroll if nothing worked
+    setTimeout(() => {
+      if (window.scrollY === currentScrollY) {
+        document.documentElement.scrollTop = nextPosition;
+        document.body.scrollTop = nextPosition; // For Safari
+      }
+    }, 100);
+  };
+
   return (
     <div className="landing-container" ref={containerRef}>
       <div className="landing-content-wrapper">
@@ -105,7 +146,12 @@ const Landing = () => {
 
         <div className="landing-bottom-section">
           <h2 className="landing-secondary-title">Powering digital success through intelligent solutions</h2>
-          <button className="landing-book-button">
+          <button 
+            className="landing-book-button" 
+            onClick={scrollToNextSection}
+            type="button"
+            style={{ cursor: 'pointer' }}
+          >
             <span className="landing-default-text">BOOK AN APPOINTMENT →</span>
             <span className="landing-hover-text">CLICK PLEASE →</span>
           </button>

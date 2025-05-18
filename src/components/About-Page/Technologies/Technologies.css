@@ -1,9 +1,5 @@
 .technologies-main{
     margin: 120px 20px 20px 20px;
-    font-family: "Exo 2", serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: italic;
     box-shadow: 0 20px 10px rgba(23, 20, 20, 0.4);
     background-color: black;
   }

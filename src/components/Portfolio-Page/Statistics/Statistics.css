@@ -101,7 +101,6 @@
     margin: 0;
 }
 
-/* Enhanced Responsive Breakpoints */
 @media (max-width: 1200px) {
     .diamond-grid {
         gap: 1.5rem;
