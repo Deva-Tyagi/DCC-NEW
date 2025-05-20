@@ -7,8 +7,151 @@
   font-style: normal;
 }
 
-/* *{
-  font-family: "Prata", serif;
-  font-weight: 400;
-  font-style: normal;
-} */
+/* Add this to your App.css file */
+
+.page-transition {
+  position: relative;
+  transition: opacity 300ms ease-in-out;
+}
+
+.fadeIn {
+  opacity: 1;
+}
+
+.fadeOut {
+  opacity: 0;
+}
+
+/* Hide default scrollbar appearance but maintain functionality */
+::-webkit-scrollbar {
+  width: 20px;
+  height: 20px;
+}
+
+/* Main track styling - create dark tech-inspired background */
+::-webkit-scrollbar-track {
+  background: #000;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  background-clip: padding-box;
+}
+
+/* Create segmented cyber-tech scrollbar design */
+::-webkit-scrollbar-thumb {
+  border: 4px solid transparent;
+  background-clip: padding-box;
+  background-color: #000;
+  background-image: 
+    repeating-linear-gradient(
+      90deg, 
+      transparent,
+      transparent 5px,
+      #00f7ff 5px,
+      #00f7ff 7px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      #ff0066,
+      #ff0066 3px,
+      transparent 3px,
+      transparent 30px
+    );
+  border-radius: 0;
+  box-shadow: inset 0 0 14px rgba(0, 247, 255, 0.5);
+}
+
+/* Hover state - animate the lines */
+::-webkit-scrollbar-thumb:hover {
+  background-image: 
+    repeating-linear-gradient(
+      90deg, 
+      transparent,
+      transparent 5px,
+      #ff0066 5px,
+      #ff0066 7px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      #00f7ff,
+      #00f7ff 3px,
+      transparent 3px,
+      transparent 30px
+    );
+  box-shadow: inset 0 0 14px rgba(255, 0, 102, 0.5);
+}
+
+/* Active state */
+::-webkit-scrollbar-thumb:active {
+  background-image: 
+    repeating-linear-gradient(
+      90deg, 
+      transparent,
+      transparent 5px,
+      #ffec00 5px,
+      #ffec00 7px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      #7d00ff,
+      #7d00ff 3px,
+      transparent 3px,
+      transparent 30px
+    );
+  box-shadow: inset 0 0 14px rgba(125, 0, 255, 0.8);
+}
+
+/* Stylized buttons for scrolling */
+::-webkit-scrollbar-button {
+  display: block;
+  height: 10px;
+  width: 10px;
+  background-color: #000;
+}
+
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+  border-width: 0 5px 5px 5px;
+  border-color: transparent transparent #00f7ff transparent;
+  border-style: solid;
+}
+
+::-webkit-scrollbar-button:single-button:vertical:increment {
+  border-width: 5px 5px 0 5px;
+  border-color: #ff0066 transparent transparent transparent;
+  border-style: solid;
+}
+
+/* Corner styling */
+::-webkit-scrollbar-corner {
+  background: #000;
+}
+
+/* Firefox compatibility */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #00f7ff #000;
+  scroll-behavior: smooth;
+}
+
+/* Add a subtle scanning animation */
+@keyframes scanline {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100px;
+  }
+}
+
+::-webkit-scrollbar-thumb {
+  animation: scanline 2s linear infinite;
+}
+
+/* Hide scrollbar for specific elements */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}

@@ -49,38 +49,38 @@ const WhyChoose = () => {
     <div className="why-page-container">
       <div className="why-right-section" ref={rightSectionRef}>
         <div className="why-heading-content">
-          <h1 ref={headingRef}>WHY CHOOSE US?</h1>
-          <p>Choose us for innovation that drives progress, reliability you can trust, and results that consistently exceed expectations. Our commitment to excellence ensures your goals are not only met but surpassed, delivering unparalleled value.</p>
+          <h1 ref={headingRef}>PROFESSIONAL WEB DEVELOPMENT SERVICES</h1>
+          <p>Partner with our top-rated web development agency for custom websites, e-commerce solutions, and SEO optimization that drives traffic and boosts conversions. Our proven strategies deliver measurable ROI and competitive advantages in your industry.</p>
         </div>
         <div className="why-features-row">
           <div className="why-calendar-card">
             <div className="why-calendar-icon"></div>
-            <h2>Excellence in Every Project</h2>
-            <p>We bring expertise and passion to every project, from e-commerce websites to digital presence management for healthcare providers.</p>
+            <h2>Custom Website Development</h2>
+            <p>Our expert developers build responsive, mobile-friendly websites optimized for speed, search engines, and conversions to maximize your online performance.</p>
           </div>
           <div className="why-settings-card">
             <div className="why-gear-icon"></div>
-            <h2>Specialized Team of Experts</h2>
-            <p>Our team consists of specialists in design, development, SEO, and more, ensuring top-quality results in every area.</p>
+            <h2>Technical SEO Expertise</h2>
+            <p>We implement advanced SEO techniques including structured data, schema markup, and Core Web Vitals optimization for superior Google rankings.</p>
           </div>
         </div>
       </div>
 
       <div className="why-center-section">
-        <img src={owl} alt="White owl" className="why-owl-image" ref={owlImageRef} />
+        <img src={owl} alt="Professional web development services" className="why-owl-image" ref={owlImageRef} />
       </div>
 
       <div className="why-left-section" ref={leftSectionRef}>
         <div className="why-content-stack">
           <div className="why-icon-card">
             <div className="why-lightbulb-icon"></div>
-            <h2>Tailored Industry Solutions</h2>
-            <p>Whether it's real estate, hospitality, or fashion, we understand your industry's unique needs and provide custom solutions.</p>
+            <h2>Industry-Specific Solutions</h2>
+            <p>We specialize in e-commerce, healthcare, real estate, and B2B website development with industry-specific optimizations for higher conversions and engagement.</p>
           </div>
           <div className="why-time-card">
             <div className="why-clock-icon"></div>
-            <h2>Exceeding Expectations</h2>
-            <p>We don't just meet expectations; we exceed them with creative, data-driven strategies to help your business stand out.</p>
+            <h2>Conversion-Focused Design</h2>
+            <p>Our UX/UI experts create engaging, accessible websites with strategic CTAs and optimized user journeys that convert visitors into loyal customers.</p>
           </div>
         </div>
       </div>

@@ -2,8 +2,8 @@ import React from 'react'
 import Landing from './Landing/Landing'
 import ContactForm from './ContactForm/ContactForm'
 import ContactInfoCards from './ContactInfoCards/ContactInfoCards'
-import OfficeLocation from './OfficeLocation/OfiiceLocation'
-import ContactTeam from './ContactTeam/ContactTeam'
+// import OfficeLocation from './OfficeLocation/OfiiceLocation'
+// import ContactTeam from './ContactTeam/ContactTeam'
 // import ContactStats from './ContactStats/ContactStats'
 
 const ContactMain = () => {
@@ -11,8 +11,8 @@ const ContactMain = () => {
     <>
       <Landing />
       <ContactInfoCards />
-      <OfficeLocation />
-      <ContactTeam />
+      {/* <OfficeLocation /> */}
+      {/* <ContactTeam /> */}
       {/* <ContactStats /> */}
       <ContactForm />
     </>

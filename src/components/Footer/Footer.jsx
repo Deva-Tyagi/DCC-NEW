@@ -139,7 +139,7 @@ const Footer = () => {
         </div>
          <div className="footer-bottom">
           <p>
-            Digital Craft Co. LLC, 2093 Philadelphia Pike #2775, Claymont, DE 19703
+            © 2025 Digital Craft Co. LLC – All rights reserved.          
           </p>
         </div>
       </section>

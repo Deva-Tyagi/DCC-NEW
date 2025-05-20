@@ -270,7 +270,7 @@ body {
   }
   
   .text p {
-    font-size: 14px;
+    font-size: 5px;
   }
   
   .main-image {
@@ -369,7 +369,7 @@ body {
 
 /* Adding these new styles to your existing CSS file */
 
-.simple-animation {
+/* .simple-animation {
   margin-top: 20px;
   width: 180px;
   height: 40px;
@@ -398,7 +398,6 @@ body {
   box-shadow: 0 0 10px rgba(0, 119, 255, 0.7);
 }
 
-/* Responsive adjustments */
 @media (max-width: 767px) {
   .animation-main{
     display: flex;
@@ -439,4 +438,4 @@ body {
     width: 12px;
     height: 12px;
   }
-}
+} */

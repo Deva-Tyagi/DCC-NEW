@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import './NewCta.css';
 import { Link } from 'react-router-dom';
 import BRlogo from '../../Images/BRlogo.jpg';
@@ -8,16 +8,82 @@ import SIPLlogo from '../../Images/SIPLlogo.jpg';
 import MICClogo from '../../Images/MICClogo.png';
 import divyaLogo from '../../Images/divyaLogo.jpg';
 import AGFlogo from '../../Images/AGFlogo.jpg';
+import emailjs from '@emailjs/browser';
+
+// EmailJS service configuration
+const EMAILJS_SERVICE_ID = 'service_t1t7kqb';
+const EMAILJS_TEMPLATE_ID = 'template_d72f7ua';
+const EMAILJS_PUBLIC_KEY = '-UzTIlfx2uPhW3BV0';
 
 const NewCta = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isFormOpen, setIsFormOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState('');
   
   useEffect(() => {
     setIsVisible(true);
   }, []);
 
+  const handleInputChange = useCallback((e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  }, []);
+
+  const closeForm = useCallback(() => {
+    setIsFormOpen(false);
+    setSubmitStatus('');
+  }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    try {
+      // Implement EmailJS functionality
+      const result = await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          message: formData.message
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+      
+      if (result.status === 200) {
+        setSubmitStatus('success');
+        setFormData({ name: '', phone: '', email: '', message: '' });
+        
+        // Close form after success message
+        setTimeout(() => {
+          setIsFormOpen(false);
+          setSubmitStatus('');
+        }, 2000);
+      } else {
+        throw new Error('Email not sent');
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
-    <div className="new-cta-section">
+    <section className="new-cta-section" aria-label="Web Development Services">
       {/* Background elements */}
       <div className="new-background-gradient"></div>
       <div className="new-circle-top"></div>
@@ -25,13 +91,13 @@ const NewCta = () => {
       
       <div className={`new-content-container ${isVisible ? 'new-visible' : ''}`}>
         <h2 className="new-heading">
-          Seeking Top Web Masters to Enhance Web, Marketing & Media Experiences
+          Expert Web Development Solutions for Business Growth & Digital Success
         </h2>
         
         <p className="new-subheading">
-          Startup businesses and enterprise MSMEs trust our team of front-end developers for their critical
-          and advanced projects. Contact us today to choose from a pool of highly skilled professionals who
-          can deliver exceptional results.
+          Leading startups and enterprise MSMEs trust our front-end development experts for mission-critical
+          projects. Partner with our skilled professionals to create responsive, accessible, and high-performance
+          web experiences that drive measurable business results.
         </p>
         
         {/* Features section */}
@@ -63,78 +129,162 @@ const NewCta = () => {
           <div className="new-feature-card">
             <div className="new-icon-container">
               <svg className="new-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z" stroke="#64ffda" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M16 2V6" stroke="#64ffda" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M8 2V6" stroke="#64ffda" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M3 10H21" stroke="#64ffda" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#64ffda" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M2 17L12 22L22 17" stroke="#64ffda" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M2 12L12 17L22 12" stroke="#64ffda" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </div>
-            <h3 className="new-feature-title">Fast Delivery</h3>
-            <p className="new-feature-description">Timely implementation of your vision</p>
+            <h3 className="new-feature-title">Technical Excellence</h3>
+            <p className="new-feature-description">Innovative solutions with cutting-edge tech</p>
           </div>
         </div>
         
         {/* CTA Button */}
         <div className="new-button-container">
-            <Link to = '/contact-us'>
-          <button className="new-cta-button">
+          <button className="new-cta-button" onClick={() => setIsFormOpen(true)}>
             <span className="new-button-shine"></span>
             <span className="new-button-text">Schedule a free consultation</span>
             <svg className="new-arrow-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </button>
-          </Link>
         </div>
         
         {/* Trust indicators */}
         <div className="new-trust-indicators">
           <p className="new-trust-text">Trusted by innovative companies worldwide</p>
           <div className="new-logos-container">
-            <div className="new-logo-placeholder">
-                <img src={BRlogo} alt="" />
-            </div>
-              <div className="new-logo-placeholder">
-                <img src={WaveLogo} alt="" />
-            </div>
-              <div className="new-logo-placeholder">
-                <img src={SIPLlogo} alt="" />
-            </div>
-              <div className="new-logo-placeholder">
-                <img src={MICClogo} alt="" />
-            </div>
-            <div className="new-logo-placeholder">
-                <img src={divyaLogo} alt="" />
-            </div>
-            <div className="new-logo-placeholder">
-                <img src={AGFlogo} alt="" />
-            </div>
+            {[BRlogo, WaveLogo, SIPLlogo, MICClogo, divyaLogo, AGFlogo].map((logo, index) => (
+              <div className="new-logo-placeholder" key={index}>
+                <img src={logo} alt="Client company logo" loading="lazy" />
+              </div>
+            ))}
           </div>
         </div>
       </div>
-    </div>
+
+      {/* Popup Form Modal */}
+      {isFormOpen && (
+        <div className="form-modal-overlay" onClick={closeForm}>
+          <div className="form-modal-container" onClick={(e) => e.stopPropagation()}>
+            <div className="form-modal-content">
+              <button className="form-close-button" onClick={closeForm} aria-label="Close form">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              
+              <div className="form-header">
+                <h3 className="form-title">Schedule Your Free Development Consultation</h3>
+                <p className="form-subtitle">Let's discuss your web development requirements</p>
+              </div>
+
+              {submitStatus === 'success' ? (
+                <div className="form-success">
+                  <div className="success-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9 12L11 14L15 10" stroke="#64ffda" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#64ffda" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <h4>Message Sent Successfully!</h4>
+                  <p>Thank you for reaching out. We'll get back to you within 24 hours.</p>
+                </div>
+              ) : (
+                <form className="consultation-form" onSubmit={handleSubmit}>
+                  <div className="form-group">
+                    <label htmlFor="name" className="form-label">Full Name</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      className="form-input"
+                      placeholder="Enter your full name"
+                      required
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="phone" className="form-label">Phone Number</label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      className="form-input"
+                      placeholder="Enter your phone number"
+                      required
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="email" className="form-label">Email Address</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      className="form-input"
+                      placeholder="Enter your email address"
+                      required
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="message" className="form-label">Project Details</label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      className="form-textarea"
+                      placeholder="Tell us about your project requirements..."
+                      rows="4"
+                      required
+                    ></textarea>
+                  </div>
+
+                  {submitStatus === 'error' && (
+                    <div className="form-error">
+                      <p>Something went wrong. Please try again later.</p>
+                    </div>
+                  )}
+
+                  <button 
+                    type="submit" 
+                    className="form-submit-button"
+                    disabled={isSubmitting}
+                  >
+                    <span className="submit-button-content">
+                      {isSubmitting ? (
+                        <>
+                          <div className="spinner"></div>
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          Send Message
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22 2L11 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </>
+                      )}
+                    </span>
+                  </button>
+                </form>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+    </section>
   );
 };
 
 export default NewCta;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

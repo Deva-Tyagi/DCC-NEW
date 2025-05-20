@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Banner from './Banner-Page/Banner';
 import Industries from './Industries/Industries';
 import IndustriesDesktop from './Industries/IndustriesDesktop'; // Import desktop version
-import Process from './Process/Process';
+// import Process from './Process/Process';
 import CallToAction from './CallToAction/CallToAction';
 import NewTestimonialCarousel from "./Testimonial/NewTestimonialCarousel";
 import NewForm from "./FormPage/NewForm";
@@ -125,9 +125,9 @@ const Home = () => {
        
           <NewCta />
         
-        <div className="animate">
+        {/* <div className="animate">
           <Process />
-        </div>
+        </div> */}
         <div className="animate">
           <NewForm />
         </div>

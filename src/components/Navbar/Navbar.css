@@ -1,3 +1,6 @@
+/* All original navbar styles remain untouched - only popup form class names changed */
+
+/* Original navbar styles remain unchanged */
 .navbar {
   position: fixed;
   top: 0;
@@ -259,14 +262,15 @@
   }
 }
 
-/* Popup Form Styles */
-.popup-overlay {
+/* Updated Popup Form Styles - with new class names */
+.modal-backdrop {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(5px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -279,7 +283,7 @@
   to { opacity: 1; }
 }
 
-.popup-form {
+.modal-container {
   background: white;
   width: 90%;
   max-width: 500px;
@@ -294,45 +298,74 @@
   to { transform: translateY(0); opacity: 1; }
 }
 
-.popup-header {
+.modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 25px;
   background: linear-gradient(135deg, #ff4500, #ff6e40);
   color: white;
+  position: relative;
+  overflow: hidden;
 }
 
-.popup-header h3 {
+.modal-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%);
+  animation: pulseGlow 8s infinite linear;
+}
+
+@keyframes pulseGlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.modal-header h3 {
   margin: 0;
   font-size: 1.3rem;
   font-weight: 600;
+  position: relative;
+  z-index: 1;
 }
 
-.popup-close {
-  background: none;
+.modal-close {
+  background: rgba(255, 255, 255, 0.2);
   border: none;
   color: white;
   font-size: 24px;
   cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 0;
   line-height: 1;
   transition: transform 0.2s ease;
+  position: relative;
+  z-index: 1;
 }
 
-.popup-close:hover {
-  transform: scale(1.2);
+.modal-close:hover {
+  transform: rotate(90deg);
+  background: rgba(255, 255, 255, 0.3);
 }
 
-.form-container {
+.modal-body {
   padding: 25px;
 }
 
-.form-group {
+.input-group {
   margin-bottom: 20px;
 }
 
-.form-group label {
+.input-group label {
   display: block;
   margin-bottom: 6px;
   font-size: 0.9rem;
@@ -340,52 +373,61 @@
   color: #333;
 }
 
-.form-group input,
-.form-group textarea {
+.input-group input,
+.input-group textarea {
   width: 100%;
   padding: 12px 15px;
   border: 1px solid #ddd;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 0.95rem;
   transition: all 0.3s ease;
+  background-color: #f9f9f9;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
+.input-group input:focus,
+.input-group textarea:focus {
   border-color: #ff4500;
   box-shadow: 0 0 0 2px rgba(255, 69, 0, 0.1);
   outline: none;
+  background-color: #fff;
 }
 
-.submit-button {
+.submit-btn {
   width: 100%;
   padding: 12px;
   background: linear-gradient(135deg, #ff4500, #ff6e40);
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 69, 0, 0.2);
 }
 
-.submit-button:hover {
+.submit-btn:hover {
   background: linear-gradient(135deg, #ff5722, #ff7043);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 69, 0, 0.25);
+  box-shadow: 0 6px 12px rgba(255, 69, 0, 0.25);
 }
 
-.submit-button:disabled {
+.submit-btn:disabled {
   background: #cccccc;
   cursor: not-allowed;
   transform: none;
   box-shadow: none;
 }
 
-.success-message {
+.success-container {
   text-align: center;
-  padding: 20px 0;
+  padding: 30px 0;
+  animation: successPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes successPop {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
 }
 
 .success-icon {
@@ -399,20 +441,21 @@
   justify-content: center;
   font-size: 30px;
   margin: 0 auto 15px;
+  box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
 }
 
-.success-message h4 {
+.success-container h4 {
   color: #333;
   margin-bottom: 10px;
   font-size: 1.5rem;
 }
 
-.success-message p {
+.success-container p {
   color: #666;
   margin: 0;
 }
 
-.error-message {
+.error-container {
   background: #ffebee;
   color: #d32f2f;
   padding: 12px;
@@ -423,21 +466,21 @@
 
 /* Responsive adjustments for the form */
 @media (max-width: 600px) {
-  .popup-form {
+  .modal-container {
     width: 95%;
     max-height: 90vh;
     overflow-y: auto;
   }
   
-  .popup-header {
+  .modal-header {
     padding: 15px 20px;
   }
   
-  .popup-header h3 {
+  .modal-header h3 {
     font-size: 1.1rem;
   }
   
-  .form-container {
+  .modal-body {
     padding: 20px 15px;
   }
 }

@@ -2,7 +2,7 @@
 import { useState, useRef, useEffect } from 'react'; // Added useEffect
 import './NewForm.css';
 import emailjs from '@emailjs/browser';
-import owlgif from '../../Images/owl-gif.gif';
+import owlgif from '../../Images/formOwl1.png';
 
 const NewForm = () => {
   const form = useRef();

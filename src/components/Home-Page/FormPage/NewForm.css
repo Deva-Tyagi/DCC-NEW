@@ -13,14 +13,18 @@
   background-color: #000;
   color: #ffffff;
   line-height: 1.6;
-}
+  /* padding-top: 50px; */
+  }
 
 .new-contact-container {
   display: flex;
   flex-direction: row;
   max-width: 1400px;
   margin: 0 auto;
-  min-height: 100vh;
+  min-height: 100%;
+  justify-content: center;
+  align-items: center;
+  padding-top: 70px;
 }
 
 /* Left Side */
@@ -70,7 +74,7 @@
 .new-expert-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .new-expert-info {

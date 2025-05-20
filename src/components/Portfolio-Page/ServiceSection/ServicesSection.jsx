@@ -1,20 +1,62 @@
-import { useState } from 'react';
-import './ServicesSection.css'
+import { useState, useEffect, useRef } from 'react';
+import './ServicesSection.css';
+import { gsap } from 'gsap';
+import webIcon from '../../Images/webIcon.jpg'
+import appIcon from '../../Images/appIcon.jpg'
+import seoIcon from '../../Images/seoIcon.jpg'
+import digitalIcon from '../../Images/digitalIcon.jpg'
 
-const ServiceBox = ({ title, description, iconUrl }) => {
-  const [isHovered, setIsHovered] = useState(false);
+const ServeCard = ({ title, description, iconUrl, keywords, index }) => {
+  const cardRef = useRef(null);
+  const iconContainerRef = useRef(null);
+  const iconRef = useRef(null);
+  
+  useEffect(() => {
+    // Animation for each card
+    gsap.fromTo(
+      cardRef.current,
+      { 
+        y: 20, 
+        opacity: 0 
+      },
+      { 
+        y: 0, 
+        opacity: 1, 
+        duration: 0.4, 
+        delay: index * 0.1
+      }
+    );
+  }, [index]);
+
+  // Handle hover animations manually instead of CSS for better performance
+  const handleMouseEnter = () => {
+    gsap.to(iconContainerRef.current, { rotation: 45, duration: 0.4 });
+    gsap.to(iconRef.current, { rotation: -45, duration: 0.4 });
+  };
+
+  const handleMouseLeave = () => {
+    gsap.to(iconContainerRef.current, { rotation: 0, duration: 0.4 });
+    gsap.to(iconRef.current, { rotation: 0, duration: 0.4 });
+  };
 
   return (
-    <div className="serve-box">
+    <div 
+      className="serve-card" 
+      ref={cardRef}
+      data-keywords={keywords}
+    >
       <div 
-        className={`serve-icon-container ${isHovered ? 'hovered' : ''}`}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+        className="serve-icon-wrapper"
+        ref={iconContainerRef}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         <img 
+          ref={iconRef}
           src={iconUrl} 
-          alt={title}
-          className={`serve-icon ${isHovered ? 'rotate' : ''}`}
+          alt={`Professional ${title} services`}
+          className="serve-icon"
+          loading="lazy"
         />
       </div>
       <h3 className="serve-title">{title}</h3>
@@ -24,54 +66,91 @@ const ServiceBox = ({ title, description, iconUrl }) => {
 };
 
 const ServicesSection = () => {
+  const sectionRef = useRef(null);
+  const headingRef = useRef(null);
+  const separatorRef = useRef(null);
+  const introTextRef = useRef(null);
+  const buttonRef = useRef(null);
+  
+  // SEO-optimized service data
   const services = [
     {
       title: "Web Development",
-      description: "We create custom, responsive websites that drive results. From simple landing pages to complex e-commerce platforms, we deliver solutions that help your business grow online.",
-      iconUrl: "https://static.vecteezy.com/system/resources/previews/031/448/053/non_2x/web-development-icon-vector.jpg"
+      description: "Expert website development with responsive design & SEO optimization. We build fast, conversion-focused sites that rank well in search results and deliver measurable business results.",
+      iconUrl: webIcon,
+      keywords: "web development, responsive design, website optimization, custom websites"
     },
     {
       title: "App Development",
-      description: "Native and cross-platform mobile applications built with the latest technologies. We ensure your app is fast, secure, and provides an exceptional user experience.",
-      iconUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJfxZxtlstaPSdf5MVjuifuP_7J6znHWzPkQ&s"
-    },
-    {
-      title: "Digital Marketing",
-      description: "Comprehensive digital marketing strategies including social media management, content marketing, and PPC campaigns to increase your brand's online presence.",
-      iconUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-ECOQ-Gbr2-2chy9s3zcvmg3wTbxTDSLxgw&s"
+      description: "Native iOS & Android app development using React Native & Flutter. Our mobile solutions focus on performance, user experience, and cross-platform functionality to maximize your market reach.",
+      iconUrl: appIcon,
+      keywords: "mobile app development, iOS apps, Android apps, React Native"
     },
     {
       title: "SEO Services",
-      description: "Data-driven SEO solutions to improve your search rankings, drive organic traffic, and increase your website's visibility in search engine results.",
-      iconUrl: "https://static.vecteezy.com/system/resources/previews/047/751/804/non_2x/technical-seo-icon-line-illustration-vector.jpg"
+      description: "Results-driven SEO strategies that boost organic rankings & traffic. Our comprehensive approach includes technical SEO, content optimization, and strategic link building for sustained growth.",
+      iconUrl: seoIcon,
+      keywords: "SEO services, search engine optimization, keyword ranking, organic traffic"
+    },
+    {
+      title: "Digital Marketing",
+      description: "Strategic digital marketing campaigns with proven ROI. Our expertise in PPC, social media, and content marketing helps businesses increase visibility, engagement, and customer acquisition.",
+      iconUrl: digitalIcon,
+      keywords: "digital marketing, PPC campaigns, social media marketing, content strategy"
     }
   ];
 
+  useEffect(() => {
+    // Main section animation
+    gsap.fromTo(
+      sectionRef.current,
+      { opacity: 0 },
+      { 
+        opacity: 1, 
+        duration: 0.8
+      }
+    );
+
+    // Staggered animation for intro elements
+    const introTimeline = gsap.timeline();
+
+    introTimeline
+      .fromTo(headingRef.current, { x: -30, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5 })
+      .fromTo(separatorRef.current, { width: 0 }, { width: "5rem", duration: 0.3 })
+      .fromTo(introTextRef.current, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5 })
+      .fromTo(buttonRef.current, { y: 15, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4 });
+
+  }, []);
+
   return (
-    <section className="serve-section">
+    <section className="serve-section" ref={sectionRef} id="services">
       <div className="serve-container">
         <div className="serve-grid">
           <div className="serve-intro">
             <span className="serve-label">OUR SERVICES</span>
-            <h2 className="serve-heading">TRANSFORMING IDEAS INTO DIGITAL SOLUTIONS</h2>
-            <div className="separator"></div>
-            <p className="serve-description intro-description">
-              We provide end-to-end IT solutions to help businesses thrive in the digital age. 
-              Our expert team delivers innovative solutions tailored to your specific needs, 
-              ensuring your business stays ahead in today's competitive market.
+            <h2 className="serve-heading" ref={headingRef}>
+              DIGITAL SOLUTIONS THAT DRIVE GROWTH & RANKINGS
+            </h2>
+            <div className="serve-separator" ref={separatorRef}></div>
+            <p className="serve-intro-text" ref={introTextRef}>
+              We deliver high-performance web development, mobile apps, and SEO services 
+              that elevate your online presence. Our strategic digital solutions are designed 
+              to improve search rankings and deliver measurable business results.
             </p>
-            <button className="serve-button">
+            {/* <button className="serve-cta-button" ref={buttonRef}>
               EXPLORE OUR SERVICES
-            </button>
+            </button> */}
           </div>
 
-          <div className="serve-list">
+          <div className="serve-cards">
             {services.map((service, index) => (
-              <ServiceBox
+              <ServeCard
                 key={index}
+                index={index}
                 title={service.title}
                 description={service.description}
                 iconUrl={service.iconUrl}
+                keywords={service.keywords}
               />
             ))}
           </div>

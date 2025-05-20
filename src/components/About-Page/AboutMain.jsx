@@ -5,7 +5,7 @@ import Technologies from './Technologies/Technologies'
 import VisionRoadmap from './VisionRoadmap/VisionRoadmap'
 import Focus from './Focus/Focus'
 import Faq from './FAQs/Faq'
-import NewCta from './New-CTA/NewCta'
+// import NewCta from './New-CTA/NewCta'
 
 const AboutMain = () => {
   return (
@@ -16,7 +16,7 @@ const AboutMain = () => {
       <VisionRoadmap />
        <Focus />
        <Faq />
-      <NewCta />
+      {/* <NewCta /> */}
     </>
   )
 }

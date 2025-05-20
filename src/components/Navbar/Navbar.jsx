@@ -177,25 +177,25 @@ const Navbar = () => {
         </div>
       </nav>
       
-      {/* Popup Inquiry Form */}
+      {/* Popup Inquiry Form - Only changed class names and retained structure */}
       {isFormOpen && (
-        <div className="popup-overlay">
-          <div className="popup-form" ref={modalRef}>
-            <div className="popup-header">
+        <div className="modal-backdrop">
+          <div className="modal-container" ref={modalRef}>
+            <div className="modal-header">
               <h3>Get Started with Us</h3>
-              <button className="popup-close" onClick={closeForm}>×</button>
+              <button className="modal-close" onClick={closeForm}>×</button>
             </div>
             
-            <div className="form-container">
+            <div className="modal-body">
               {formStatus.submitted ? (
-                <div className="success-message">
+                <div className="success-container">
                   <div className="success-icon">✓</div>
                   <h4>Thank You!</h4>
                   <p>Your message has been sent successfully. We'll get back to you soon!</p>
                 </div>
               ) : (
                 <form ref={formRef} onSubmit={handleSubmit}>
-                  <div className="form-group">
+                  <div className="input-group">
                     <label htmlFor="name">Full Name</label>
                     <input 
                       type="text" 
@@ -208,7 +208,7 @@ const Navbar = () => {
                     />
                   </div>
                   
-                  <div className="form-group">
+                  <div className="input-group">
                     <label htmlFor="email">Email Address</label>
                     <input 
                       type="email" 
@@ -221,7 +221,7 @@ const Navbar = () => {
                     />
                   </div>
                   
-                  <div className="form-group">
+                  <div className="input-group">
                     <label htmlFor="phone">Mobile Number</label>
                     <input 
                       type="tel" 
@@ -234,7 +234,7 @@ const Navbar = () => {
                     />
                   </div>
                   
-                  <div className="form-group">
+                  <div className="input-group">
                     <label htmlFor="message">Your Inquiry</label>
                     <textarea 
                       id="message" 
@@ -249,14 +249,14 @@ const Navbar = () => {
                   
                   <button 
                     type="submit" 
-                    className="submit-button"
+                    className="submit-btn"
                     disabled={formStatus.submitting}
                   >
                     {formStatus.submitting ? 'Sending...' : 'Submit Inquiry'}
                   </button>
                   
                   {formStatus.error && (
-                    <div className="error-message">
+                    <div className="error-container">
                       <p>{formStatus.error}</p>
                     </div>
                   )}
