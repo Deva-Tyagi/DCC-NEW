@@ -5,6 +5,7 @@ import Technologies from './Technologies/Technologies'
 import VisionRoadmap from './VisionRoadmap/VisionRoadmap'
 import Focus from './Focus/Focus'
 import Faq from './FAQs/Faq'
+import Process from './Process/Process'
 // import NewCta from './New-CTA/NewCta'
 
 const AboutMain = () => {
@@ -16,6 +17,7 @@ const AboutMain = () => {
       <VisionRoadmap />
        <Focus />
        <Faq />
+       <Process />
       {/* <NewCta /> */}
     </>
   )

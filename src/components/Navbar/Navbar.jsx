@@ -177,13 +177,13 @@ const Navbar = () => {
         </div>
       </nav>
       
-      {/* Popup Inquiry Form - Only changed class names and retained structure */}
+      {/* Updated Popup Inquiry Form with new design */}
       {isFormOpen && (
         <div className="modal-backdrop">
           <div className="modal-container" ref={modalRef}>
             <div className="modal-header">
               <h3>Get Started with Us</h3>
-              <button className="modal-close" onClick={closeForm}>×</button>
+              <button className="modal-close" onClick={closeForm}>&times;</button>
             </div>
             
             <div className="modal-body">

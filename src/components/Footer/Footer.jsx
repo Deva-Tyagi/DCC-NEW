@@ -46,41 +46,49 @@ const Footer = () => {
               We help B2B SaaS companies grow, with crystal clear messaging and
               high-performing websites.
             </p>
-            <button className="card-button">
+            <a href="/contact" className="card-button">
               Book a Free Clarity Call <span className="arrow"><FaArrowRight /></span>
-            </button>
+            </a>
           </div>
           
           <div className="footer-section connect">
             <h4>Connect over</h4>
             <ul className="connect-ul">
-              <div className="connect-icons">
-                <span><FaTwitter /></span>
-                <li>X</li>
-              </div>
-              <div className="connect-icons">
-                <span><AiFillLinkedin /></span>
-                <li>LinkedIn</li>
-              </div>
-              <div className="connect-icons">
-                <span><FaFacebookSquare /></span>
-                <li>Facebook</li>
-              </div>
-              <div className="connect-icons">
-                <span><SiGmail /></span>
-                <li>Email</li>
-              </div>
+              <a href="https://twitter.com/digitalcraftco" className="social-link">
+                <div className="connect-icons">
+                  <span><FaTwitter /></span>
+                  <li>X</li>
+                </div>
+              </a>
+              <a href="https://linkedin.com/company/digitalcraftco" className="social-link">
+                <div className="connect-icons">
+                  <span><AiFillLinkedin /></span>
+                  <li>LinkedIn</li>
+                </div>
+              </a>
+              <a href="https://facebook.com/digitalcraftco" className="social-link">
+                <div className="connect-icons">
+                  <span><FaFacebookSquare /></span>
+                  <li>Facebook</li>
+                </div>
+              </a>
+              <a href="mailto:info@digitalcraftco.com" className="social-link">
+                <div className="connect-icons">
+                  <span><SiGmail /></span>
+                  <li>Email</li>
+                </div>
+              </a>
             </ul>
           </div>
           
           <div className="footer-section explore">
             <h4>Explore</h4>
             <ul>
-              <li>Home</li>
-              <li>About us</li>
-              <li>See our Work</li>
-              <li>Hire us</li>
-              <li>Blog</li>
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About us</a></li>
+              <li><a href="/portfolio">See our Work</a></li>
+              <li><a href="/contact-us">Hire us</a></li>
+            
             </ul>
           </div>
           
@@ -101,38 +109,38 @@ const Footer = () => {
 
       <section className="client-results-section">
         <div className="client-results-container">
-          <h2 className="client-results-title">Our recent client results</h2>
+          <h2 className="client-results-title">Our Journey</h2>
           
           <div className="clients-container">
             <div className="client-card">
-              <h3 className="client-percentage">82%</h3>
-              <p className="client-text">Increase in conv. rate per user</p>
+              <h3 className="client-percentage">12+</h3>
+              <p className="client-text">Projects completed successfully</p>
               <div className="client-logo mailreach-logo">
-                MAILREACH
+                PROJECTS
               </div>
             </div>
             
             <div className="client-card">
-              <h3 className="client-percentage">207%</h3>
-              <p className="client-text">Increase in conversion rate</p>
+              <h3 className="client-percentage">35%</h3>
+              <p className="client-text">Average improvement in user engagement</p>
               <div className="client-logo reviewwave-logo">
-                review wave
+                engagement
               </div>
             </div>
             
             <div className="client-card">
-              <h3 className="client-percentage">230%</h3>
-              <p className="client-text">Increase in conversion of MOM</p>
+              <h3 className="client-percentage">96%</h3>
+              <p className="client-text">Client satisfaction rate</p>
               <div className="client-logo viostream-logo">
-                VIOSTREAM
+                SATISFACTION
               </div>
             </div>
             
             <div className="client-card">
-              <h3 className="client-percentage">155%</h3>
-              <p className="client-text">Increase in demo calls</p>
+              <h3 className="client-percentage">8+</h3>
+              <p className="client-text">Industries served</p>
               <div className="client-logo another-logo">
-                CLIENT
+                INDUSTRIES
               </div>
             </div>
           </div>
@@ -148,3 +156,52 @@ const Footer = () => {
 };
 
 export default Footer;
+
+
+
+
+
+//  <section className="client-results-section">
+//         <div className="client-results-container">
+//           <h2 className="client-results-title">Our vision & goals</h2>
+          
+//           <div className="clients-container">
+//             <div className="client-card">
+//               <h3 className="client-percentage">50+</h3>
+//               <p className="client-text">Projects to complete in 2025</p>
+//               <div className="client-logo mailreach-logo">
+//                 GOAL
+//               </div>
+//             </div>
+            
+//             <div className="client-card">
+//               <h3 className="client-percentage">100%</h3>
+//               <p className="client-text">Client satisfaction target</p>
+//               <div className="client-logo reviewwave-logo">
+//                 PROMISE
+//               </div>
+//             </div>
+            
+//             <div className="client-card">
+//               <h3 className="client-percentage">24/7</h3>
+//               <p className="client-text">Customer support availability</p>
+//               <div className="client-logo viostream-logo">
+//                 SERVICE
+//               </div>
+//             </div>
+            
+//             <div className="client-card">
+//               <h3 className="client-percentage">15+</h3>
+//               <p className="client-text">Industry specializations</p>
+//               <div className="client-logo another-logo">
+//                 EXPERTISE
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//         <div className="footer-bottom">
+//           <p>
+//             © 2025 Digital Craft Co. LLC – All rights reserved.          
+//           </p>
+//         </div>
+//       </section>

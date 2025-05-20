@@ -5,7 +5,6 @@
   padding: 120px 40px 100px;
   position: relative;
   overflow: hidden;
-  margin-top: 100px;
 }
 
 .footer-container {
@@ -118,6 +117,7 @@
   box-shadow: 0 6px 15px rgba(224, 48, 48, 0.3);
   position: relative;
   overflow: hidden;
+  text-decoration: none;
 }
 
 .card-button::before {
@@ -207,7 +207,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
- 
+}
+
+.social-link {
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
 }
 
 .connect-icons {
@@ -283,6 +288,14 @@
   border-radius: 8px;
 }
 
+.explore ul li a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .explore ul li:hover {
   color: #e03535;
   background-color: rgba(255, 255, 255, 0.05);
@@ -335,6 +348,14 @@
   transition: all 0.3s ease;
   display: block;
   border-radius: 8px;
+}
+
+.services ul li a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .services ul li:hover {

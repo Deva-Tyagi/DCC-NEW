@@ -6,7 +6,6 @@ import ServicesSection from '../ServiceSection/ServicesSection'
 import Blog from '../Blog/Blog'
 // import CallToAction from '../../Home-Page/CallToAction/CallToAction'
 import NewCta from '../../About-Page/New-CTA/NewCta'
-import Process from '../Process/Process'
 
 const PortfolioMain = () => {
   return (
@@ -17,7 +16,7 @@ const PortfolioMain = () => {
       {/* <Team /> */}
   
       <Blog />
-         <Process />
+        
       {/* <CallToAction /> */}
       <NewCta />
     </>
