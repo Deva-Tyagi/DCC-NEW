@@ -39,12 +39,13 @@ const topics = [
   },
   {
     id: 4,
-    title: "DevOps Tools",
+    title: "Digital Marketing",
     data: [
-      { name: "Docker", logo: "https://w7.pngwing.com/pngs/219/411/png-transparent-docker-logo-kubernetes-microservices-cloud-computing-dockers-logo-text-logo-cloud-computing-thumbnail.png" },
-      { name: "Jenkins", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgr4GaQ79t_0EzVgnJA2BDkalwpHEoWW5LDQ&s" },
-      { name: "Terraform", logo: "https://img.icons8.com/fluent/512/terraform.png" },
-      { name: "Git", logo: "https://cdn.freebiesupply.com/logos/thumbs/2x/git-logo.png" },
+      { name: "Meta Ads", logo: "https://cdn-icons-png.flaticon.com/512/6033/6033716.png" },
+      { name: "Google Ads", logo: "https://static-00.iconduck.com/assets.00/google-ads-icon-2048x1837-tc1gmmc3.png" },
+      { name: "Taboola Ads ", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVwqjYEiljm_8JS5UydhsFlAr_z98RfiUdLsHFILn5BoOQ0Z43FH17E6-DODZ4dCYvy7w&usqp=CAU" },
+      { name: "LinkedIn Ads", logo: "https://cdn1.iconfinder.com/data/icons/social-media-set-for-free/32/linkedin-512.png" },
+      { name: "Snapchat Ads", logo: "https://neads.co/composants/uploads/2021/09/snapchat-ads.jpg" },
     ],
   },
   {

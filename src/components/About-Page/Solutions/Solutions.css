@@ -1,9 +1,10 @@
 .solution-main{
-    background: #000000; 
+    background: #000000;
     min-height: 90vh;
     padding: 90px 0px;
     margin-top: -25px;
 }
+
 .solution-header{
     text-align: center;
 }
@@ -11,6 +12,7 @@
 .solution-header h2{
     color:#64ffda;
 }
+
 .solution-header p{
     width: 75%;
     margin: 0 auto;
@@ -22,21 +24,19 @@
     align-items: center;
     justify-content: center;
     padding: 20px;
-   
-  }
-  
-  .solution-cards-container {
+}
+
+.solution-cards-container {
     display: flex;
     flex-wrap: wrap;
     gap: 54px;
     justify-content: center;
     padding-top: 50px;
-  }
-  
-  
-  .solution-card {
-    background: linear-gradient(135deg, #1e1e2e, #000000); 
-    border: 2px solid #64ffda; 
+}
+
+.solution-card {
+    background: linear-gradient(135deg, #1e1e2e, #000000);
+    border: 2px solid #64ffda;
     border-radius: 16px;
     width: 300px;
     padding: 24px;
@@ -44,82 +44,89 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     color: #ffffff;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .solution-card:hover {
+}
+
+.solution-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 8px 16px #64ffda80; 
-  }
-  
-  .solution-card:hover .solution-card-icon{
-    transform: rotateY(180deg);
-    transition: 0.5s;
-    
-  }
-  
-  .solution-card-icon {
-    font-size: 48px;
-    color: #64ffda; 
+    box-shadow: 0 8px 16px #64ffda80;
+}
+
+
+.solution-card-icon {
     margin-bottom: 16px;
-   font-style: normal;
-  }
-  
- 
-  .solution-card-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.solution-card-icon img {
+    width: 48px;
+    height: 48px;
+    filter: brightness(0) saturate(100%) invert(85%) sepia(46%) saturate(4151%) hue-rotate(139deg) brightness(101%) contrast(101%);
+    transition: transform 0.5s ease, filter 0.3s ease;
+}
+
+.solution-card:hover .solution-card-icon img {
+    filter: none;
+}
+
+.solution-card-title {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 12px;
-  }
-  
-  
-  .solution-card-description {
+}
+
+.solution-card-description {
     font-size: 14px;
-    color: #b0b0b0; 
+    color: #b0b0b0;
     margin-bottom: 20px;
     line-height: 1.6;
-  }
-  
-  
-  .solution-card-link {
+}
+
+.solution-card-link {
     font-size: 16px;
-    color: #64ffda; 
+    color: #64ffda;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
-  }
-  
-  .solution-card-link:hover {
-    color: #64ffdaa7; 
-  }
-  
-  
-  @media (max-width: 768px) {
+}
+
+.solution-card-link:hover {
+    color: #64ffdaa7;
+}
+
+@media (max-width: 768px) {
     .solution-card {
-      width: 100%;
-      max-width: 300px;
+        width: 100%;
+        max-width: 300px;
     }
 
     .solution-header h2{
         color:#64ffda
     }
+
     .solution-header p{
         width: 75%;
         margin: 0 auto;
         font-size: 24px;
     }
-  }
-  
-  @media (max-width: 480px) {
+}
+
+@media (max-width: 480px) {
     .solution-card {
-      padding: 16px;
+        padding: 16px;
     }
-  
+
     .solution-card-title {
-      font-size: 16px;
+        font-size: 16px;
     }
-  
+
     .solution-card-description {
-      font-size: 12px;
+        font-size: 12px;
     }
-  }
-  
+
+    .solution-card-icon img {
+        width: 40px;
+        height: 40px;
+    }
+}
