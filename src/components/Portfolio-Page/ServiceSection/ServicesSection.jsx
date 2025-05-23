@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
 import './ServicesSection.css';
 import { gsap } from 'gsap';
-import webIcon from '../../Images/webIcon.jpg'
-import appIcon from '../../Images/appIcon.jpg'
-import seoIcon from '../../Images/seoIcon.jpg'
-import digitalIcon from '../../Images/digitalIcon.jpg'
+import webIcon from '../../Images/webIcon.gif'
+import appIcon from '../../Images/appIcon.gif'
+import seoIcon from '../../Images/seoIcon.gif'
+import digitalIcon from '../../Images/digitalIcon.gif'
 
 const ServeCard = ({ title, description, iconUrl, keywords, index }) => {
   const cardRef = useRef(null);

@@ -54,9 +54,9 @@ const PortfolioBanner = () => {
               <h1 className="portfolio-slide-title">
                 {slide.title}
               </h1>
-              <button className="portfolio-custom-button">
+              {/* <button className="portfolio-custom-button">
                 {slide.buttonText}
-              </button>
+              </button> */}
             </div>
           ))}
         </div>

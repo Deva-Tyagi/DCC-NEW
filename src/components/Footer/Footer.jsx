@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./Footer.css";
 import logo from '../Images/dcclogo1.jpg'
-import { FaTwitter, FaFacebookSquare, FaArrowRight } from "react-icons/fa";
+import { FaFacebookSquare, FaArrowRight, FaInstagram } from "react-icons/fa";
 import { AiFillLinkedin } from "react-icons/ai";
 import { SiGmail } from "react-icons/si";
 
@@ -54,25 +54,25 @@ const Footer = () => {
           <div className="footer-section connect">
             <h4>Connect over</h4>
             <ul className="connect-ul">
-              <a href="https://twitter.com/digitalcraftco" className="social-link">
+              <a href="https://www.instagram.com/digitalcraftco.dcc/" className="social-link">
                 <div className="connect-icons">
-                  <span><FaTwitter /></span>
-                  <li>X</li>
+                  <span><FaInstagram /></span>
+                  <li>Instaram</li>
                 </div>
               </a>
-              <a href="https://linkedin.com/company/digitalcraftco" className="social-link">
+              <a href="https://www.linkedin.com/company/digitalcraftco/" className="social-link">
                 <div className="connect-icons">
                   <span><AiFillLinkedin /></span>
                   <li>LinkedIn</li>
                 </div>
               </a>
-              <a href="https://facebook.com/digitalcraftco" className="social-link">
+              <a href="https://www.facebook.com/profile.php?id=61576692659964" className="social-link">
                 <div className="connect-icons">
                   <span><FaFacebookSquare /></span>
                   <li>Facebook</li>
                 </div>
               </a>
-              <a href="mailto:info@digitalcraftco.com" className="social-link">
+              <a href="mailto:contact@digitalcraftco.com" className="social-link">
                 <div className="connect-icons">
                   <span><SiGmail /></span>
                   <li>Email</li>
@@ -156,52 +156,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-
-
-
-
-//  <section className="client-results-section">
-//         <div className="client-results-container">
-//           <h2 className="client-results-title">Our vision & goals</h2>
-          
-//           <div className="clients-container">
-//             <div className="client-card">
-//               <h3 className="client-percentage">50+</h3>
-//               <p className="client-text">Projects to complete in 2025</p>
-//               <div className="client-logo mailreach-logo">
-//                 GOAL
-//               </div>
-//             </div>
-            
-//             <div className="client-card">
-//               <h3 className="client-percentage">100%</h3>
-//               <p className="client-text">Client satisfaction target</p>
-//               <div className="client-logo reviewwave-logo">
-//                 PROMISE
-//               </div>
-//             </div>
-            
-//             <div className="client-card">
-//               <h3 className="client-percentage">24/7</h3>
-//               <p className="client-text">Customer support availability</p>
-//               <div className="client-logo viostream-logo">
-//                 SERVICE
-//               </div>
-//             </div>
-            
-//             <div className="client-card">
-//               <h3 className="client-percentage">15+</h3>
-//               <p className="client-text">Industry specializations</p>
-//               <div className="client-logo another-logo">
-//                 EXPERTISE
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//         <div className="footer-bottom">
-//           <p>
-//             © 2025 Digital Craft Co. LLC – All rights reserved.          
-//           </p>
-//         </div>
-//       </section>

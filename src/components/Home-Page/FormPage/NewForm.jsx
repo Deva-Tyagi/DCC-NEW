@@ -2,7 +2,7 @@
 import { useState, useRef, useEffect } from 'react'; // Added useEffect
 import './NewForm.css';
 import emailjs from '@emailjs/browser';
-import owlgif from '../../Images/formOwl1.png';
+import formOwl from '../../Images/formOwl.jpg';
 
 const NewForm = () => {
   const form = useRef();
@@ -90,7 +90,7 @@ const NewForm = () => {
           </p>
           <div className="new-expert-box">
             <div className="new-expert-image">
-              <img src={owlgif} alt="Digital Expert" />
+              <img src={formOwl} alt="Digital Expert" />
             </div>
             <div className="new-expert-info">
               <h2 className="new-phone-number">(+91) 9718269561</h2>

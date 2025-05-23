@@ -69,12 +69,13 @@
   width: 50%;
   height: 250px;
   overflow: hidden;
+  background-color: #7e2927;
 }
 
 .new-expert-image img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .new-expert-info {
