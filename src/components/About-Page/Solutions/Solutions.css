@@ -53,15 +53,15 @@
 
 
 .solution-card-icon {
-    margin-bottom: 16px;
+    margin-bottom: 26px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .solution-card-icon img {
-    width: 48px;
-    height: 48px;
+    width: 78px;
+    height: 78px;
     filter: brightness(0) saturate(100%) invert(85%) sepia(46%) saturate(4151%) hue-rotate(139deg) brightness(101%) contrast(101%);
     transition: transform 0.5s ease, filter 0.3s ease;
 }

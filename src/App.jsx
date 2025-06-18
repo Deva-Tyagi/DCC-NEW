@@ -14,27 +14,22 @@ import Footer from "./components/Footer/Footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Create a component to forcefully reset scroll and clear all GSAP animations
 function ScrollReset() {
   const { pathname } = useLocation();
   
   useEffect(() => {
-    // Kill all GSAP animations and scroll triggers
     gsap.killTweensOf(window);
     ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     
-    // Force scroll position reset with multiple approaches
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    document.body.scrollTop = 0; 
+    document.documentElement.scrollTop = 0; 
     window.scrollTo(0, 0);
     
-    // Additional forced reset after a slight delay
     const timeoutId = setTimeout(() => {
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
       window.scrollTo(0, 0);
       
-      // Refresh scroll triggers after navigation
       ScrollTrigger.refresh(true);
     }, 50);
     
@@ -44,7 +39,6 @@ function ScrollReset() {
   return null;
 }
 
-// AppContent component to handle route rendering
 function AppContent() {
   const location = useLocation();
   const [displayLocation, setDisplayLocation] = useState(location);
@@ -57,11 +51,10 @@ function AppContent() {
         setDisplayLocation(location);
         setTransitionStage("fadeIn");
         
-        // Force scroll to top when content changes
         window.scrollTo(0, 0);
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
-      }, 300); // Match this with your CSS transition time
+      }, 300); 
     }
   }, [location, displayLocation]);
   

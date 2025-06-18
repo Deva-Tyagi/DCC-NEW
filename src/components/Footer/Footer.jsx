@@ -18,9 +18,8 @@ const Footer = () => {
         });
       };
       
-      cloneItems(); // Clone items to create the seamless loop effect
+      cloneItems(); 
       
-      // Optional: Add animation pause on hover
       clientsContainer.addEventListener('mouseenter', () => {
         clientsContainer.style.animationPlayState = 'paused';
       });

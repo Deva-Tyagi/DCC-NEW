@@ -132,10 +132,11 @@
 .focus-quote-number {
   position: absolute;
   left: -50px;
-  top: -10px;
+  top: -20px;
   font-size: 80px;
   font-weight: bold;
   color: rgba(233, 255, 250, 0.3);  
+
 }
 
 .focus-right-section h3 {

@@ -12,7 +12,6 @@ const ServeCard = ({ title, description, iconUrl, keywords, index }) => {
   const iconRef = useRef(null);
   
   useEffect(() => {
-    // Animation for each card
     gsap.fromTo(
       cardRef.current,
       { 
@@ -28,7 +27,6 @@ const ServeCard = ({ title, description, iconUrl, keywords, index }) => {
     );
   }, [index]);
 
-  // Handle hover animations manually instead of CSS for better performance
   const handleMouseEnter = () => {
     gsap.to(iconContainerRef.current, { rotation: 45, duration: 0.4 });
     gsap.to(iconRef.current, { rotation: -45, duration: 0.4 });
@@ -72,7 +70,6 @@ const ServicesSection = () => {
   const introTextRef = useRef(null);
   const buttonRef = useRef(null);
   
-  // SEO-optimized service data
   const services = [
     {
       title: "Web Development",
@@ -101,7 +98,6 @@ const ServicesSection = () => {
   ];
 
   useEffect(() => {
-    // Main section animation
     gsap.fromTo(
       sectionRef.current,
       { opacity: 0 },
@@ -111,7 +107,6 @@ const ServicesSection = () => {
       }
     );
 
-    // Staggered animation for intro elements
     const introTimeline = gsap.timeline();
 
     introTimeline

@@ -220,11 +220,16 @@
     transform: translateX(50px);
     width: 100%;
     text-align: center;
+     cursor: pointer;
+  }
+  .nav-item Link{
+    cursor: pointer;
   }
   
   .nav-item a {
     padding: 12px 0;
     font-size: 1.1rem;
+   
   }
 
   .nav-menu.active .nav-item {

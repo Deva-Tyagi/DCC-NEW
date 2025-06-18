@@ -59,7 +59,7 @@ const Solutions = () => {
                   <img 
                     src={hoveredCard === index ? card.hoverIcon : card.icon} 
                     alt={card.title}
-                    style={{ width: '48px', height: '48px' }}
+                    // style={{ width: '68px', height: '68px' }}
                   />
                 </div>
                 <div className="solution-card-title">{card.title}</div>
